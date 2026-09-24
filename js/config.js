@@ -5,7 +5,7 @@
  */
 window.STORE_CONFIG = {
   storeName: "Freelancer Discos",
-  edition: "Novidades em Vinil",
+  street: "Rua Dr. João Moreira, 485",
   city: "Fortaleza, CE - Brasil",
   
   // WhatsApp oficial da loja (código do país 55 + DDD + número sem espaços nem traços)
@@ -15,7 +15,7 @@ window.STORE_CONFIG = {
   instagram: "@freelancerdiscos",
   instagramUrl: "https://instagram.com/freelancerdiscos",
   email: "contato@freelancerdiscos.com.br",
-  address: "Fortaleza, CE · Enviamos para todo o Brasil com embalagem reforçada",
+  address: "Rua Dr. João Moreira, 485 — Centro, Fortaleza - CE. Atendimento presencial e envio diário para todo o Brasil com embalagem reforçada.",
   
   // Mensagem padrão ao iniciar conversa de compra
   orderGreeting: "Olá, Freelancer Discos! Gostaria de reservar/comprar os seguintes discos das novidades:"
