@@ -157,27 +157,98 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ==========================================================================
-  // 5. CARREGAMENTO DO CATÁLOGO DE DISCOS (data/discos.json)
+  // 5. CARREGAMENTO DO CATÁLOGO DE DISCOS (TEMPO REAL SUPABASE + FALLBACK LOCAL)
   // ==========================================================================
   async function loadCatalog() {
     try {
-      catalogCount.textContent = 'Carregando acervo das novidades...';
-      const response = await fetch('data/discos.json');
-      if (!response.ok) {
-        throw new Error(`Falha HTTP ${response.status}`);
+      catalogCount.textContent = 'Sincronizando acervo em tempo real...';
+
+      // 1. Carrega o mapa base de capas a partir de data/discos.json
+      let coverMap = {};
+      let localFallbackRecords = [];
+      try {
+        const localRes = await fetch('data/discos.json');
+        if (localRes.ok) {
+          localFallbackRecords = await localRes.json();
+          localFallbackRecords.forEach(d => {
+            if (d.capa_url) {
+              coverMap[d.id] = d.capa_url;
+              const qKey = `${d.artista}_${d.titulo}`.toLowerCase();
+              coverMap[qKey] = d.capa_url;
+            }
+          });
+        }
+      } catch (_) {}
+
+      // Recupera cache adicional salvo no navegador
+      try {
+        const clientCoverCache = JSON.parse(localStorage.getItem('freelancer_covers') || '{}');
+        coverMap = { ...coverMap, ...clientCoverCache };
+      } catch (_) {}
+
+      // 2. Consulta ao vivo o Supabase
+      const cfg = window.STORE_CONFIG || {};
+      const supabaseUrl = cfg.supabaseUrl;
+      const anonKey = cfg.supabaseAnonKey;
+      let liveRecords = null;
+
+      if (supabaseUrl && anonKey) {
+        try {
+          const queryUrl = `${supabaseUrl}/rest/v1/discos?select=id,artista,titulo,preco,caixa,ano,observacao,ativo,deletado&caixa=in.(49,50,51,Caixa%2049,Caixa%2050,Caixa%2051)&deletado=eq.false&ativo=eq.true&order=artista.asc`;
+          const res = await fetch(queryUrl, {
+            headers: {
+              apikey: anonKey,
+              Authorization: `Bearer ${anonKey}`,
+              'Accept-Profile': 'public'
+            }
+          });
+
+          if (res.ok) {
+            liveRecords = await res.json();
+          }
+        } catch (err) {
+          console.warn('Conexão ao Supabase falhou, usando acervo local:', err);
+        }
       }
 
-      allRecords = await response.json();
+      // 3. Monta o catálogo
+      if (liveRecords && liveRecords.length > 0) {
+        allRecords = liveRecords.map((item, idx) => {
+          const qKey = `${item.artista || ''}_${item.titulo || ''}`.toLowerCase();
+          const capa = coverMap[item.id] || coverMap[qKey] || null;
+
+          return {
+            id: item.id,
+            numero: idx + 1,
+            artista: (item.artista || 'Artista Desconhecido').trim(),
+            titulo: (item.titulo || 'Sem Título').trim(),
+            preco: Number(item.preco) || 0,
+            caixa: item.caixa ? String(item.caixa) : 'Caixa 50',
+            ano: item.ano ? String(item.ano).trim() : null,
+            capa_url: capa,
+            observacao: item.observacao ? item.observacao.trim() : null
+          };
+        });
+      } else if (localFallbackRecords.length > 0) {
+        allRecords = localFallbackRecords;
+      } else {
+        catalogGrid.innerHTML = `
+          <div style="grid-column: 1 / -1; text-align: center; padding: 48px var(--space-4); color: var(--color-text-muted);">
+            <p style="font-size: 18px; margin-bottom: 12px; color: var(--color-brand-primary);">Não foi possível carregar os discos no momento.</p>
+          </div>
+        `;
+        catalogCount.textContent = 'Erro ao carregar catálogo';
+        return;
+      }
+
       filteredRecords = [...allRecords];
       displayedCount = PAGE_SIZE;
-
       renderCatalog();
     } catch (err) {
-      console.error('Erro ao carregar data/discos.json:', err);
+      console.error('Erro ao carregar catálogo:', err);
       catalogGrid.innerHTML = `
         <div style="grid-column: 1 / -1; text-align: center; padding: 48px var(--space-4); color: var(--color-text-muted);">
           <p style="font-size: 18px; margin-bottom: 12px; color: var(--color-brand-primary);">Não foi possível carregar os discos no momento.</p>
-          <p style="font-size: 14px;">Certifique-se de executar via servidor local (ex: Live Server ou <code>npx serve</code>).</p>
         </div>
       `;
       catalogCount.textContent = 'Erro ao carregar catálogo';

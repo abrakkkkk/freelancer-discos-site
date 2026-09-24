@@ -8,6 +8,11 @@ window.STORE_CONFIG = {
   street: "Rua Dr. João Moreira, 485",
   city: "Fortaleza, CE - Brasil",
   
+  // Conexão em Tempo Real com Supabase (Leitura Pública)
+  supabaseUrl: "https://zolsuwuysexvnjomevvv.supabase.co",
+  supabaseAnonKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpvbHN1d3V5c2V4dm5qb21ldnZ2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODYzODY5MjUsImV4cCI6MjEwMTk2MjkyNX0.zhX-Cuynn9coyPwq3Qh-SfnGNQWUalvBRRlqx-bBC3E",
+
+  
   // WhatsApp oficial da loja (código do país 55 + DDD + número sem espaços nem traços)
   whatsappNumber: "5585999999999", 
   whatsappFormatted: "(85) 99999-9999",

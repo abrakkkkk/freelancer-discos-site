@@ -37,7 +37,8 @@ async function runTests() {
   });
   const page = await desktopContext.newPage();
 
-  await page.goto('http://localhost:3333/', { waitUntil: 'networkidle' });
+  await page.goto('http://localhost:3333/', { waitUntil: 'load' });
+  await page.waitForSelector('.record-card', { timeout: 10000 });
   console.log('  ✓ Página carregada com sucesso.');
 
   // Verifica elementos chave
@@ -130,7 +131,8 @@ async function runTests() {
   });
   const mobilePage = await mobileContext.newPage();
 
-  await mobilePage.goto('http://localhost:3333/', { waitUntil: 'networkidle' });
+  await mobilePage.goto('http://localhost:3333/', { waitUntil: 'load' });
+  await mobilePage.waitForSelector('.record-card', { timeout: 10000 });
 
   // Verifica botão flutuante mobile da sacola
   const floatingBtnVisible = await mobilePage.locator('#floatingCartBtn').isVisible();
