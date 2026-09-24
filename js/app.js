@@ -1,469 +1,182 @@
 /**
  * app.js - Lógica interativa da Freelancer Discos
- * - Estante generativa
- * - Catálogo das Caixas 50 e 51 com busca instantânea e filtros
- * - Sacola de compras persistente e checkout direto no WhatsApp
+ * Refatorado seguindo práticas de Clean Code:
+ * - Responsabilidade Única (SRP) e separação de camadas
+ * - Funções pequenas (<20 linhas) e descritivas
+ * - Eliminação de duplicação e código morto
  */
 
-document.addEventListener('DOMContentLoaded', () => {
-  // ==========================================================================
-  // 1. ESTADO GLOBAL DA APLICAÇÃO
-  // ==========================================================================
-  let allRecords = [];
-  let filteredRecords = [];
-  let displayedCount = 24;
-  const PAGE_SIZE = 24;
-  let activeFilter = 'all';
-  let searchTerm = '';
-
-  // Sacola recuperada do localStorage
-  let cart = [];
-  try {
-    cart = JSON.parse(localStorage.getItem('freelancer_cart') || '[]');
-  } catch (_) {
-    cart = [];
+// ============================================================================
+// 1. CONSTANTES E CONFIGURAÇÕES
+// ============================================================================
+const CONFIG = {
+  PAGE_SIZE: 24,
+  SEARCH_DEBOUNCE_MS: 120,
+  SWIPE_THRESHOLD_PX: 40,
+  STORAGE_KEYS: {
+    CART: 'freelancer_cart',
+    COVERS: 'freelancer_covers'
   }
+};
 
-  // ==========================================================================
-  // 2. ELEMENTOS DO DOM
-  // ==========================================================================
-  const catalogGrid = document.getElementById('catalogGrid');
-  const catalogCount = document.getElementById('catalogCount');
-  const searchInput = document.getElementById('searchInput');
-  const searchClear = document.getElementById('searchClear');
-  const filterPills = document.querySelectorAll('.pill-btn');
-  const loadMoreContainer = document.getElementById('loadMoreContainer');
-  const loadMoreBtn = document.getElementById('loadMoreBtn');
-
-  // Sacola
-  const cartTrigger = document.getElementById('cartTrigger');
-  const floatingCartBtn = document.getElementById('floatingCartBtn');
-  const cartDrawer = document.getElementById('cartDrawer');
-  const cartOverlay = document.getElementById('cartOverlay');
-  const drawerCloseBtn = document.getElementById('drawerCloseBtn');
-  const cartItemsList = document.getElementById('cartItemsList');
-  const drawerFooter = document.getElementById('drawerFooter');
-  const cartSubtotal = document.getElementById('cartSubtotal');
-  const cartBadge = document.getElementById('cartBadge');
-  const floatingCartBadge = document.getElementById('floatingCartBadge');
-  const drawerItemCount = document.getElementById('drawerItemCount');
-  const checkoutWhatsappBtn = document.getElementById('checkoutWhatsappBtn');
-  const clearCartBtn = document.getElementById('clearCartBtn');
-  const customerName = document.getElementById('customerName');
-  const customerCity = document.getElementById('customerCity');
-
-  // Navegação Mobile
-  const menuToggle = document.getElementById('menuToggle');
-  const mobileMenu = document.getElementById('mobileMenu');
-  const mobileLinks = document.querySelectorAll('.mobile-link');
-
-  // Informações de Contato Dinâmicas
-  applyStoreConfig();
-
-  // ==========================================================================
-  // 3. ESTANTE GENERATIVA VIVA (SEÇÃO QUEM SOMOS)
-  // ==========================================================================
-  function initGenerativeShelf() {
-    const shelfEl = document.getElementById('shelf');
-    if (!shelfEl) return;
-    shelfEl.innerHTML = '';
-
-    // Gerador pseudo-aleatório determinístico para manter harmonia visual
-    let seed = 7;
-    const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
-
-    for (let i = 0; i < 3; i++) {
-      const row = document.createElement('div');
-      row.className = 'row';
-      const count = window.innerWidth < 640 ? 18 : 28;
-
-      for (let j = 0; j < count; j++) {
-        const spine = document.createElement('b');
-        const width = 8 + rnd() * 14;
-        const height = 60 + rnd() * 40;
-        const hue = 10 + rnd() * 45; // Tons quentes vintage (terracota, âmbar, mogno)
-        const sat = 28 + rnd() * 32;
-        const lum = 20 + rnd() * 38;
-
-        spine.style.width = `${width}px`;
-        spine.style.height = `${height}%`;
-        spine.style.background = `hsl(${hue}, ${sat}%, ${lum}%)`;
-        row.appendChild(spine);
-      }
-      shelfEl.appendChild(row);
-    }
-  }
-
-  // ==========================================================================
-  // 4. UTILITÁRIOS E FORMATAÇÃO
-  // ==========================================================================
-  function formatPrice(value) {
+// ============================================================================
+// 2. FORMATAÇÃO E UTILITÁRIOS PUROS
+// ============================================================================
+const Formatters = {
+  formatCurrency(value) {
     return new Intl.NumberFormat('pt-BR', {
       style: 'currency',
       currency: 'BRL'
     }).format(value);
-  }
+  },
 
-  function normalizeText(text) {
+  normalizeSearchText(text) {
     if (!text) return '';
     return text
       .normalize('NFD')
       .replace(/[\u0300-\u036f]/g, '')
       .toLowerCase()
       .trim();
-  }
+  },
 
-  function generateAlbumColor(str) {
-    let hash = 0;
-    for (let i = 0; i < str.length; i++) {
-      hash = str.charCodeAt(i) + ((hash << 5) - hash);
-    }
-    const colors = [
-      '#8e1f18', '#14285e', '#d9772b', '#1f5a34', 
+  generateAlbumColor(seedText) {
+    const palette = [
+      '#8e1f18', '#14285e', '#d9772b', '#1f5a34',
       '#6c3483', '#b03a2e', '#196f3d', '#283747', '#78281f'
     ];
-    return colors[Math.abs(hash) % colors.length];
+    let hash = 0;
+    for (let i = 0; i < seedText.length; i++) {
+      hash = seedText.charCodeAt(i) + ((hash << 5) - hash);
+    }
+    return palette[Math.abs(hash) % palette.length];
   }
+};
 
-  function applyStoreConfig() {
-    const cfg = window.STORE_CONFIG || {};
-    if (cfg.whatsappFormatted) {
-      const footerWa = document.getElementById('footerWhatsappText');
-      if (footerWa) footerWa.textContent = `WhatsApp: ${cfg.whatsappFormatted}`;
-    }
-    if (cfg.email) {
-      const storeEmail = document.getElementById('storeEmail');
-      const footerEmail = document.getElementById('footerEmailText');
-      if (storeEmail) storeEmail.textContent = cfg.email;
-      if (footerEmail) footerEmail.textContent = cfg.email;
-    }
-    if (cfg.instagram) {
-      const storeIg = document.getElementById('storeInstagram');
-      const footerIg = document.getElementById('footerInstagramText');
-      if (storeIg) storeIg.textContent = `${cfg.instagram} no Instagram →`;
-      if (footerIg) footerIg.textContent = cfg.instagram;
-    }
-    if (cfg.address) {
-      const storeAddr = document.getElementById('storeAddress');
-      if (storeAddr) storeAddr.textContent = cfg.address;
-    }
-
-    const directBtn = document.getElementById('directWhatsappBtn');
-    if (directBtn && cfg.whatsappNumber) {
-      const cleanPhone = cfg.whatsappNumber.replace(/\D/g, '');
-      const msg = encodeURIComponent(`Olá, Freelancer Discos! Estava navegando no site e gostaria de falar com a equipe de curadoria.`);
-      directBtn.href = `https://wa.me/${cleanPhone}?text=${msg}`;
-    }
-  }
-
-  // ==========================================================================
-  // 5. CARREGAMENTO DO CATÁLOGO DE DISCOS (TEMPO REAL SUPABASE + FALLBACK LOCAL)
-  // ==========================================================================
-  async function loadCatalog() {
+// ============================================================================
+// 3. CAMADA DE ARMAZENAMENTO LOCAL (STORAGE SERVICE)
+// ============================================================================
+const StorageService = {
+  loadCart() {
     try {
-      catalogCount.textContent = 'Sincronizando acervo em tempo real...';
+      return JSON.parse(localStorage.getItem(CONFIG.STORAGE_KEYS.CART) || '[]');
+    } catch (_) {
+      return [];
+    }
+  },
 
-      // 1. Carrega o mapa base de capas a partir de data/discos.json
-      let coverMap = {};
-      let localFallbackRecords = [];
-      try {
-        const localRes = await fetch('data/discos.json');
-        if (localRes.ok) {
-          localFallbackRecords = await localRes.json();
-          localFallbackRecords.forEach(d => {
-            if (d.capa_url) {
-              coverMap[d.id] = d.capa_url;
-              const qKey = `${d.artista}_${d.titulo}`.toLowerCase();
-              coverMap[qKey] = d.capa_url;
-            }
-          });
-        }
-      } catch (_) {}
+  saveCart(cartItems) {
+    localStorage.setItem(CONFIG.STORAGE_KEYS.CART, JSON.stringify(cartItems));
+  },
 
-      // Recupera cache adicional salvo no navegador
-      try {
-        const clientCoverCache = JSON.parse(localStorage.getItem('freelancer_covers') || '{}');
-        coverMap = { ...coverMap, ...clientCoverCache };
-      } catch (_) {}
+  loadCoverCache() {
+    try {
+      return JSON.parse(localStorage.getItem(CONFIG.STORAGE_KEYS.COVERS) || '{}');
+    } catch (_) {
+      return {};
+    }
+  }
+};
 
-      // 2. Consulta ao vivo o Supabase (com suporte a capa_url em tempo real)
-      const cfg = window.STORE_CONFIG || {};
-      const supabaseUrl = cfg.supabaseUrl;
-      const anonKey = cfg.supabaseAnonKey;
-      let liveRecords = null;
+// ============================================================================
+// 4. CAMADA DE DADOS E CATÁLOGO (CATALOG SERVICE)
+// ============================================================================
+const CatalogService = {
+  async fetchLocalDiscos() {
+    try {
+      const res = await fetch('data/discos.json');
+      return res.ok ? await res.json() : [];
+    } catch (_) {
+      return [];
+    }
+  },
 
-      if (supabaseUrl && anonKey) {
-        try {
-          // Tenta consultar incluindo capa_url ao vivo
-          let queryUrl = `${supabaseUrl}/rest/v1/discos?select=id,artista,titulo,preco,caixa,ano,observacao,ativo,deletado,capa_url&caixa=in.(49,50,51,Caixa%2049,Caixa%2050,Caixa%2051)&deletado=eq.false&ativo=eq.true&order=artista.asc`;
-          let res = await fetch(queryUrl, {
-            headers: {
-              apikey: anonKey,
-              Authorization: `Bearer ${anonKey}`,
-              'Accept-Profile': 'public'
-            }
-          });
-
-          // Se a coluna capa_url ainda não foi criada no Supabase, consulta sem ela
-          if (!res.ok) {
-            queryUrl = `${supabaseUrl}/rest/v1/discos?select=id,artista,titulo,preco,caixa,ano,observacao,ativo,deletado&caixa=in.(49,50,51,Caixa%2049,Caixa%2050,Caixa%2051)&deletado=eq.false&ativo=eq.true&order=artista.asc`;
-            res = await fetch(queryUrl, {
-              headers: {
-                apikey: anonKey,
-                Authorization: `Bearer ${anonKey}`,
-                'Accept-Profile': 'public'
-              }
-            });
-          }
-
-          if (res.ok) {
-            liveRecords = await res.json();
-          }
-        } catch (err) {
-          console.warn('Conexão ao Supabase falhou, usando acervo local:', err);
-        }
+  buildCoverMap(fallbackRecords) {
+    const coverMap = {};
+    fallbackRecords.forEach(d => {
+      if (d.capa_url) {
+        coverMap[d.id] = d.capa_url;
+        const queryKey = `${d.artista}_${d.titulo}`.toLowerCase();
+        coverMap[queryKey] = d.capa_url;
       }
+    });
+    return { ...coverMap, ...StorageService.loadCoverCache() };
+  },
 
-      // 3. Monta o catálogo (dando prioridade à capa_url em tempo real)
-      if (liveRecords && liveRecords.length > 0) {
-        allRecords = liveRecords.map((item, idx) => {
-          const qKey = `${item.artista || ''}_${item.titulo || ''}`.toLowerCase();
-          const capa = item.capa_url || coverMap[item.id] || coverMap[qKey] || null;
+  async querySupabase(supabaseUrl, anonKey) {
+    const baseFields = 'id,artista,titulo,preco,caixa,ano,observacao,ativo,deletado';
+    const filterParams = '&caixa=in.(49,50,51,Caixa%2049,Caixa%2050,Caixa%2051)&deletado=eq.false&ativo=eq.true&order=artista.asc';
+    const headers = {
+      apikey: anonKey,
+      Authorization: `Bearer ${anonKey}`,
+      'Accept-Profile': 'public'
+    };
 
-          return {
-            id: item.id,
-            numero: idx + 1,
-            artista: (item.artista || 'Artista Desconhecido').trim(),
-            titulo: (item.titulo || 'Sem Título').trim(),
-            preco: Number(item.preco) || 0,
-            caixa: item.caixa ? String(item.caixa) : 'Caixa 50',
-            ano: item.ano ? String(item.ano).trim() : null,
-            capa_url: capa,
-            observacao: item.observacao ? item.observacao.trim() : null
-          };
-        });
-      } else if (localFallbackRecords.length > 0) {
-        allRecords = localFallbackRecords;
-      } else {
-        catalogGrid.innerHTML = `
-          <div style="grid-column: 1 / -1; text-align: center; padding: 48px var(--space-4); color: var(--color-text-muted);">
-            <p style="font-size: 18px; margin-bottom: 12px; color: var(--color-brand-primary);">Não foi possível carregar os discos no momento.</p>
-          </div>
-        `;
-        catalogCount.textContent = 'Erro ao carregar catálogo';
-        return;
-      }
+    try {
+      const urlWithCover = `${supabaseUrl}/rest/v1/discos?select=${baseFields},capa_url${filterParams}`;
+      const res = await fetch(urlWithCover, { headers });
+      if (res.ok) return await res.json();
 
-      filteredRecords = [...allRecords];
-      displayedCount = PAGE_SIZE;
-      renderCatalog();
+      const urlWithoutCover = `${supabaseUrl}/rest/v1/discos?select=${baseFields}${filterParams}`;
+      const fallbackRes = await fetch(urlWithoutCover, { headers });
+      return fallbackRes.ok ? await fallbackRes.json() : null;
     } catch (err) {
-      console.error('Erro ao carregar catálogo:', err);
-      catalogGrid.innerHTML = `
-        <div style="grid-column: 1 / -1; text-align: center; padding: 48px var(--space-4); color: var(--color-text-muted);">
-          <p style="font-size: 18px; margin-bottom: 12px; color: var(--color-brand-primary);">Não foi possível carregar os discos no momento.</p>
-        </div>
-      `;
-      catalogCount.textContent = 'Erro ao carregar catálogo';
+      console.warn('Conexão ao Supabase falhou, usando acervo local:', err);
+      return null;
     }
-  }
+  },
 
-  // ==========================================================================
-  // 6. RENDERIZAÇÃO DO GRID DE DISCOS
-  // ==========================================================================
-  function renderCatalog() {
-    catalogGrid.innerHTML = '';
+  normalizeRecord(item, index, coverMap) {
+    const queryKey = `${item.artista || ''}_${item.titulo || ''}`.toLowerCase();
+    const resolvedCover = item.capa_url || coverMap[item.id] || coverMap[queryKey] || null;
 
-    if (filteredRecords.length === 0) {
-      catalogGrid.innerHTML = `
-        <div style="grid-column: 1 / -1; text-align: center; padding: 56px var(--space-4); color: var(--color-text-muted);">
-          <p style="font-size: 20px; font-family: var(--font-editorial-title); font-style: italic; margin-bottom: 8px;">Nenhum disco encontrado para esta busca.</p>
-          <p style="font-size: 14px;">Tente pesquisar outro artista ou nome do álbum.</p>
-        </div>
-      `;
-      catalogCount.textContent = '0 discos encontrados';
-      loadMoreContainer.style.display = 'none';
-      return;
-    }
+    return {
+      id: item.id,
+      numero: index + 1,
+      artista: (item.artista || 'Artista Desconhecido').trim(),
+      titulo: (item.titulo || 'Sem Título').trim(),
+      preco: Number(item.preco) || 0,
+      caixa: item.caixa ? String(item.caixa) : 'Caixa 50',
+      ano: item.ano ? String(item.ano).trim() : null,
+      capa_url: resolvedCover,
+      observacao: item.observacao ? item.observacao.trim() : null
+    };
+  },
 
-    const toRender = filteredRecords.slice(0, displayedCount);
+  async loadAllRecords() {
+    const localRecords = await this.fetchLocalDiscos();
+    const coverMap = this.buildCoverMap(localRecords);
 
-    toRender.forEach(record => {
-      const inCart = cart.some(item => item.id === record.id);
-      const fallbackColor = generateAlbumColor(record.artista + record.titulo);
-
-      // Tratamento da Capa: se tiver capa_url usa <img> com fallback on error; se não, usa arte vetorial
-      let coverHtml = '';
-      if (record.capa_url) {
-        coverHtml = `
-          <img src="${record.capa_url}" 
-               alt="${record.titulo} - ${record.artista}" 
-               class="record-cover-img" 
-               loading="lazy" 
-               onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
-          <div class="record-fallback-art" style="display: none; --album-color: ${fallbackColor};">
-            <i></i>
-          </div>
-        `;
-      } else {
-        coverHtml = `
-          <div class="record-fallback-art" style="--album-color: ${fallbackColor};">
-            <i></i>
-          </div>
-        `;
-      }
-
-      const card = document.createElement('article');
-      card.className = 'record-card';
-      card.setAttribute('data-id', record.id);
-
-      card.innerHTML = `
-        <div class="record-top-meta">
-          <span class="record-num">${String(record.numero).padStart(2, '0')}</span>
-          <span class="record-badge">Vinil LP</span>
-        </div>
-
-        <div class="record-artwork">
-          ${coverHtml}
-        </div>
-
-        <div class="record-info">
-          <span class="record-artist">${record.artista}</span>
-          <h3 class="record-title">${record.titulo}</h3>
-          
-          <div class="record-price-row">
-            <span class="record-price">${formatPrice(record.preco)}</span>
-            <button type="button" 
-                    class="btn-add-cart ${inCart ? 'added' : ''}" 
-                    data-action="add-cart" 
-                    data-id="${record.id}" 
-                    aria-label="${inCart ? 'Disco na sacola' : 'Adicionar à Sacola'}">
-              ${inCart ? 'Na Sacola ✓' : '+ Sacola'}
-            </button>
-          </div>
-        </div>
-      `;
-
-      catalogGrid.appendChild(card);
-    });
-
-    // Atualiza contadores
-    const countText = filteredRecords.length === 1 
-      ? '1 disco encontrado' 
-      : `${filteredRecords.length} discos encontrados (exibindo ${toRender.length})`;
-    catalogCount.textContent = countText;
-
-    // Controle do Botão Carregar Mais
-    if (filteredRecords.length > displayedCount) {
-      loadMoreContainer.style.display = 'flex';
-      const remaining = filteredRecords.length - displayedCount;
-      loadMoreBtn.textContent = `Carregar mais vinis (+${Math.min(PAGE_SIZE, remaining)})`;
-    } else {
-      loadMoreContainer.style.display = 'none';
-    }
-  }
-
-  // ==========================================================================
-  // 7. FILTROS E BUSCA EM TEMPO REAL
-  // ==========================================================================
-  function filterCatalog() {
-    const termClean = normalizeText(searchTerm);
-
-    filteredRecords = allRecords.filter(record => {
-      if (!termClean) return true;
-      const artistClean = normalizeText(record.artista);
-      const titleClean = normalizeText(record.titulo);
-
-      return artistClean.includes(termClean) || titleClean.includes(termClean);
-    });
-
-    displayedCount = PAGE_SIZE;
-    renderCatalog();
-  }
-
-  // Evento de Digitação na Busca (com resposta imediata)
-  let searchTimer = null;
-  searchInput.addEventListener('input', (e) => {
-    searchTerm = e.target.value;
-    searchClear.style.display = searchTerm ? 'grid' : 'none';
-
-    clearTimeout(searchTimer);
-    searchTimer = setTimeout(() => {
-      filterCatalog();
-    }, 120);
-  });
-
-  searchClear.addEventListener('click', () => {
-    searchInput.value = '';
-    searchTerm = '';
-    searchClear.style.display = 'none';
-    filterCatalog();
-    searchInput.focus();
-  });
-
-  // Evento das Pílulas de Filtro (Caixas 50 / 51)
-  filterPills.forEach(pill => {
-    pill.addEventListener('click', () => {
-      filterPills.forEach(p => {
-        p.classList.remove('active');
-        p.setAttribute('aria-selected', 'false');
-      });
-      pill.classList.add('active');
-      pill.setAttribute('aria-selected', 'true');
-
-      activeFilter = pill.getAttribute('data-filter');
-      filterCatalog();
-    });
-  });
-
-  // Botão Carregar Mais
-  loadMoreBtn.addEventListener('click', () => {
-    displayedCount += PAGE_SIZE;
-    renderCatalog();
-  });
-
-  // ==========================================================================
-  // 8. GERENCIAMENTO DA SACOLA DE COMPRAS (CART)
-  // ==========================================================================
-  function saveCart() {
-    localStorage.setItem('freelancer_cart', JSON.stringify(cart));
-    updateCartBadges();
-    renderCartDrawer();
-  }
-
-  function updateCartBadges() {
-    const totalItems = cart.length;
-    cartBadge.textContent = totalItems;
-    floatingCartBadge.textContent = totalItems;
-
-    // Atualiza estado dos botões nos cards já renderizados
-    const addButtons = document.querySelectorAll('.btn-add-cart');
-    addButtons.forEach(btn => {
-      const id = Number(btn.getAttribute('data-id'));
-      const inCart = cart.some(item => item.id === id);
-      if (inCart) {
-        btn.classList.add('added');
-        btn.textContent = 'Na Sacola ✓';
-      } else {
-        btn.classList.remove('added');
-        btn.textContent = '+ Sacola';
-      }
-    });
-  }
-
-  function addToCart(recordId) {
-    const record = allRecords.find(r => r.id === recordId);
-    if (!record) return;
-
-    const existingIndex = cart.findIndex(item => item.id === recordId);
-    if (existingIndex > -1) {
-      // Já está na sacola: abre a sacola para visualizar
-      openCart();
-      return;
+    const cfg = window.STORE_CONFIG || {};
+    let liveRecords = null;
+    if (cfg.supabaseUrl && cfg.supabaseAnonKey) {
+      liveRecords = await this.querySupabase(cfg.supabaseUrl, cfg.supabaseAnonKey);
     }
 
-    // Adiciona o item à sacola
-    cart.push({
+    if (liveRecords && liveRecords.length > 0) {
+      return liveRecords.map((item, idx) => this.normalizeRecord(item, idx, coverMap));
+    }
+    if (localRecords.length > 0) {
+      return localRecords;
+    }
+    throw new Error('Nenhum acervo disponível (Supabase e local falharam).');
+  }
+};
+
+// ============================================================================
+// 5. GESTÃO DO ESTADO DA SACOLA (CART MANAGER)
+// ============================================================================
+class CartManager {
+  constructor(initialItems = []) {
+    this.items = initialItems;
+  }
+
+  has(id) {
+    return this.items.some(item => item.id === id);
+  }
+
+  add(record) {
+    if (this.has(record.id)) return false;
+    this.items.push({
       id: record.id,
       artista: record.artista,
       titulo: record.titulo,
@@ -471,266 +184,539 @@ document.addEventListener('DOMContentLoaded', () => {
       caixa: record.caixa,
       capa_url: record.capa_url
     });
-
-    saveCart();
-
-    // Feedback visual animado no botão da sacola
-    cartTrigger.classList.add('pulse');
-    floatingCartBtn.classList.add('pulse');
-    setTimeout(() => {
-      cartTrigger.classList.remove('pulse');
-      floatingCartBtn.classList.remove('pulse');
-    }, 600);
+    return true;
   }
 
-  function removeFromCart(recordId) {
-    cart = cart.filter(item => item.id !== recordId);
-    saveCart();
+  remove(id) {
+    this.items = this.items.filter(item => item.id !== id);
   }
 
-  function clearCart() {
-    cart = [];
-    saveCart();
+  clear() {
+    this.items = [];
   }
 
-  function calculateCartTotal() {
-    return cart.reduce((acc, item) => acc + (Number(item.preco) || 0), 0);
+  calculateTotal() {
+    return this.items.reduce((acc, item) => acc + (Number(item.preco) || 0), 0);
   }
 
-  function renderCartDrawer() {
-    cartItemsList.innerHTML = '';
-    const totalCount = cart.length;
-    drawerItemCount.textContent = totalCount === 1 ? '1 disco selecionado' : `${totalCount} discos selecionados`;
+  getCount() {
+    return this.items.length;
+  }
+}
 
-    if (totalCount === 0) {
-      drawerFooter.style.display = 'none';
-      cartItemsList.innerHTML = `
-        <div class="cart-empty-state">
-          <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
-            <line x1="3" y1="6" x2="21" y2="6"></line>
-            <path d="M16 10a4 4 0 0 1-8 0"></path>
-          </svg>
-          <p>Sua sacola de vinis está vazia.</p>
-          <button class="btn btn-outline" onclick="document.getElementById('drawerCloseBtn').click(); window.location.hash='#catalogo';">
-            Explorar Novidades
+// ============================================================================
+// 6. SERVIÇO DE CHECKOUT WHATSAPP (ORDER SERVICE)
+// ============================================================================
+const OrderService = {
+  buildOrderMessage(items, totalFormatted, customerName, customerCity, greeting) {
+    let msg = `${greeting}\n\n`;
+    items.forEach((item, idx) => {
+      msg += `${idx + 1}. *${item.artista}* — _${item.titulo}_ (${item.caixa}) • ${Formatters.formatCurrency(item.preco)}\n`;
+    });
+    msg += `\n*Total dos Discos:* ${totalFormatted}\n`;
+
+    if (customerName) msg += `*Nome:* ${customerName}\n`;
+    if (customerCity) msg += `*Local/Frete:* ${customerCity}\n`;
+
+    msg += `\nAguardo a confirmação dos dados e dados para pagamento via Pix. Obrigado!`;
+    return msg;
+  },
+
+  buildCheckoutUrl(cartManager, customerName, customerCity) {
+    const cfg = window.STORE_CONFIG || {};
+    const rawNumber = cfg.whatsappNumber || '5585999999999';
+    const cleanNumber = rawNumber.replace(/\D/g, '');
+    const greeting = cfg.orderGreeting || 'Olá, Freelancer Discos! Gostaria de comprar os seguintes vinis:';
+
+    const totalText = Formatters.formatCurrency(cartManager.calculateTotal());
+    const message = this.buildOrderMessage(cartManager.items, totalText, customerName, customerCity, greeting);
+
+    return `https://wa.me/${cleanNumber}?text=${encodeURIComponent(message)}`;
+  }
+};
+
+// ============================================================================
+// 7. RENDERIZADOR DO CATÁLOGO (CATALOG VIEW)
+// ============================================================================
+const CatalogView = {
+  grid: null,
+  counter: null,
+  loadMoreContainer: null,
+  loadMoreBtn: null,
+
+  init() {
+    this.grid = document.getElementById('catalogGrid');
+    this.counter = document.getElementById('catalogCount');
+    this.loadMoreContainer = document.getElementById('loadMoreContainer');
+    this.loadMoreBtn = document.getElementById('loadMoreBtn');
+  },
+
+  renderLoading() {
+    if (this.counter) this.counter.textContent = 'Sincronizando acervo em tempo real...';
+  },
+
+  renderError(message = 'Não foi possível carregar os discos no momento.') {
+    if (this.grid) {
+      this.grid.innerHTML = `
+        <div style="grid-column: 1 / -1; text-align: center; padding: 48px var(--space-4); color: var(--color-text-muted);">
+          <p style="font-size: 18px; margin-bottom: 12px; color: var(--color-brand-primary);">${message}</p>
+        </div>
+      `;
+    }
+    if (this.counter) this.counter.textContent = 'Erro ao carregar catálogo';
+    if (this.loadMoreContainer) this.loadMoreContainer.style.display = 'none';
+  },
+
+  createCardElement(record, inCart) {
+    const fallbackColor = Formatters.generateAlbumColor(record.artista + record.titulo);
+    const coverHtml = record.capa_url
+      ? `<img src="${record.capa_url}" 
+              alt="${record.titulo} - ${record.artista}" 
+              class="record-cover-img" 
+              loading="lazy" 
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+         <div class="record-fallback-art" style="display: none; --album-color: ${fallbackColor};">
+           <i></i>
+         </div>`
+      : `<div class="record-fallback-art" style="--album-color: ${fallbackColor};">
+           <i></i>
+         </div>`;
+
+    const card = document.createElement('article');
+    card.className = 'record-card';
+    card.setAttribute('data-id', record.id);
+    card.innerHTML = `
+      <div class="record-top-meta">
+        <span class="record-num">${String(record.numero).padStart(2, '0')}</span>
+        <span class="record-badge">Vinil LP</span>
+      </div>
+      <div class="record-artwork">
+        ${coverHtml}
+      </div>
+      <div class="record-info">
+        <span class="record-artist">${record.artista}</span>
+        <h3 class="record-title">${record.titulo}</h3>
+        <div class="record-price-row">
+          <span class="record-price">${Formatters.formatCurrency(record.preco)}</span>
+          <button type="button" 
+                  class="btn-add-cart ${inCart ? 'added' : ''}" 
+                  data-action="add-cart" 
+                  data-id="${record.id}" 
+                  aria-label="${inCart ? 'Disco na sacola' : 'Adicionar à Sacola'}">
+            ${inCart ? 'Na Sacola ✓' : '+ Sacola'}
           </button>
         </div>
-      `;
+      </div>
+    `;
+    return card;
+  },
+
+  renderEmptyState() {
+    this.grid.innerHTML = `
+      <div style="grid-column: 1 / -1; text-align: center; padding: 56px var(--space-4); color: var(--color-text-muted);">
+        <p style="font-size: 20px; font-family: var(--font-editorial-title); font-style: italic; margin-bottom: 8px;">Nenhum disco encontrado para esta busca.</p>
+        <p style="font-size: 14px;">Tente pesquisar outro artista ou nome do álbum.</p>
+      </div>
+    `;
+    this.counter.textContent = '0 discos encontrados';
+    this.loadMoreContainer.style.display = 'none';
+  },
+
+  renderRecords(records, cartManager, displayedCount) {
+    this.grid.innerHTML = '';
+
+    if (records.length === 0) {
+      this.renderEmptyState();
       return;
     }
 
-    drawerFooter.style.display = 'block';
-
-    cart.forEach(item => {
-      const itemEl = document.createElement('div');
-      itemEl.className = 'cart-item-card';
-
-      const thumbImg = item.capa_url 
-        ? `<img src="${item.capa_url}" alt="${item.titulo}" class="cart-item-thumb">`
-        : `<div class="cart-item-thumb" style="background: ${generateAlbumColor(item.artista)}; display: grid; place-items: center; color: #fff; font-size: 11px; font-weight: 700;">VINIL</div>`;
-
-      itemEl.innerHTML = `
-        ${thumbImg}
-        <div class="cart-item-details">
-          <span class="cart-item-artist">${item.artista} (${item.caixa})</span>
-          <h4 class="cart-item-title">${item.titulo}</h4>
-          <span class="cart-item-price">${formatPrice(item.preco)}</span>
-        </div>
-        <button type="button" class="cart-item-remove-btn" data-action="remove-item" data-id="${item.id}" aria-label="Remover disco">
-          &times;
-        </button>
-      `;
-
-      cartItemsList.appendChild(itemEl);
+    const visibleBatch = records.slice(0, displayedCount);
+    visibleBatch.forEach(record => {
+      const inCart = cartManager.has(record.id);
+      const card = this.createCardElement(record, inCart);
+      this.grid.appendChild(card);
     });
 
-    cartSubtotal.textContent = formatPrice(calculateCartTotal());
-  }
+    const isSingle = records.length === 1;
+    this.counter.textContent = isSingle
+      ? '1 disco encontrado'
+      : `${records.length} discos encontrados (exibindo ${visibleBatch.length})`;
 
-  function openCart() {
-    cartDrawer.classList.add('open');
-    cartOverlay.classList.add('open');
-    cartDrawer.setAttribute('aria-hidden', 'false');
-    cartOverlay.setAttribute('aria-hidden', 'false');
+    this.updateLoadMore(records.length, displayedCount);
+  },
+
+  updateLoadMore(totalCount, displayedCount) {
+    if (totalCount > displayedCount) {
+      this.loadMoreContainer.style.display = 'flex';
+      const remaining = totalCount - displayedCount;
+      const nextBatch = Math.min(CONFIG.PAGE_SIZE, remaining);
+      this.loadMoreBtn.textContent = `Carregar mais vinis (+${nextBatch})`;
+    } else {
+      this.loadMoreContainer.style.display = 'none';
+    }
+  }
+};
+
+// ============================================================================
+// 8. RENDERIZADOR DA SACOLA (CART VIEW)
+// ============================================================================
+const CartView = {
+  drawer: null,
+  overlay: null,
+  itemsList: null,
+  footer: null,
+  subtotal: null,
+  badge: null,
+  floatingBadge: null,
+  itemCount: null,
+  triggerBtn: null,
+  floatingBtn: null,
+
+  init() {
+    this.drawer = document.getElementById('cartDrawer');
+    this.overlay = document.getElementById('cartOverlay');
+    this.itemsList = document.getElementById('cartItemsList');
+    this.footer = document.getElementById('drawerFooter');
+    this.subtotal = document.getElementById('cartSubtotal');
+    this.badge = document.getElementById('cartBadge');
+    this.floatingBadge = document.getElementById('floatingCartBadge');
+    this.itemCount = document.getElementById('drawerItemCount');
+    this.triggerBtn = document.getElementById('cartTrigger');
+    this.floatingBtn = document.getElementById('floatingCartBtn');
+  },
+
+  open() {
+    this.drawer.classList.add('open');
+    this.overlay.classList.add('open');
+    this.drawer.setAttribute('aria-hidden', 'false');
+    this.overlay.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
-  }
+  },
 
-  function closeCart() {
-    cartDrawer.classList.remove('open');
-    cartOverlay.classList.remove('open');
-    cartDrawer.setAttribute('aria-hidden', 'true');
-    cartOverlay.setAttribute('aria-hidden', 'true');
+  close() {
+    this.drawer.classList.remove('open');
+    this.overlay.classList.remove('open');
+    this.drawer.setAttribute('aria-hidden', 'true');
+    this.overlay.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
-  }
+  },
 
-  // Eventos de clique na Sacola
-  cartTrigger.addEventListener('click', openCart);
-  floatingCartBtn.addEventListener('click', openCart);
-  drawerCloseBtn.addEventListener('click', closeCart);
-  cartOverlay.addEventListener('click', closeCart);
-  clearCartBtn.addEventListener('click', clearCart);
+  pulseButtons() {
+    this.triggerBtn?.classList.add('pulse');
+    this.floatingBtn?.classList.add('pulse');
+    setTimeout(() => {
+      this.triggerBtn?.classList.remove('pulse');
+      this.floatingBtn?.classList.remove('pulse');
+    }, 600);
+  },
 
-  // Escuta tecla Escape para fechar sacola
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && cartDrawer.classList.contains('open')) {
-      closeCart();
-    }
-  });
+  updateBadges(totalItems, cartManager) {
+    if (this.badge) this.badge.textContent = totalItems;
+    if (this.floatingBadge) this.floatingBadge.textContent = totalItems;
 
-  // Evento delegado para botões no Catálogo e na Sacola
-  document.addEventListener('click', (e) => {
-    const addBtn = e.target.closest('[data-action="add-cart"]');
-    if (addBtn) {
-      const id = Number(addBtn.getAttribute('data-id'));
-      addToCart(id);
+    document.querySelectorAll('.btn-add-cart').forEach(btn => {
+      const id = Number(btn.getAttribute('data-id'));
+      const inCart = cartManager.has(id);
+      btn.classList.toggle('added', inCart);
+      btn.textContent = inCart ? 'Na Sacola ✓' : '+ Sacola';
+      btn.setAttribute('aria-label', inCart ? 'Disco na sacola' : 'Adicionar à Sacola');
+    });
+  },
+
+  createCartItemElement(item) {
+    const itemEl = document.createElement('div');
+    itemEl.className = 'cart-item-card';
+
+    const thumbHtml = item.capa_url
+      ? `<img src="${item.capa_url}" alt="${item.titulo}" class="cart-item-thumb">`
+      : `<div class="cart-item-thumb" style="background: ${Formatters.generateAlbumColor(item.artista)}; display: grid; place-items: center; color: #fff; font-size: 11px; font-weight: 700;">VINIL</div>`;
+
+    itemEl.innerHTML = `
+      ${thumbHtml}
+      <div class="cart-item-details">
+        <span class="cart-item-artist">${item.artista} (${item.caixa})</span>
+        <h4 class="cart-item-title">${item.titulo}</h4>
+        <span class="cart-item-price">${Formatters.formatCurrency(item.preco)}</span>
+      </div>
+      <button type="button" class="cart-item-remove-btn" data-action="remove-item" data-id="${item.id}" aria-label="Remover disco">
+        &times;
+      </button>
+    `;
+    return itemEl;
+  },
+
+  renderEmptyState() {
+    this.footer.style.display = 'none';
+    this.itemsList.innerHTML = `
+      <div class="cart-empty-state">
+        <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <path d="M16 10a4 4 0 0 1-8 0"></path>
+        </svg>
+        <p>Sua sacola de vinis está vazia.</p>
+        <button class="btn btn-outline" onclick="document.getElementById('drawerCloseBtn').click(); window.location.hash='#catalogo';">
+          Explorar Novidades
+        </button>
+      </div>
+    `;
+  },
+
+  render(cartManager) {
+    this.itemsList.innerHTML = '';
+    const totalItems = cartManager.getCount();
+    this.itemCount.textContent = totalItems === 1 ? '1 disco selecionado' : `${totalItems} discos selecionados`;
+
+    if (totalItems === 0) {
+      this.renderEmptyState();
       return;
     }
 
-    const removeBtn = e.target.closest('[data-action="remove-item"]');
-    if (removeBtn) {
-      const id = Number(removeBtn.getAttribute('data-id'));
-      removeFromCart(id);
-      return;
-    }
-  });
-
-  // ==========================================================================
-  // 9. CHECKOUT E FINALIZAÇÃO NO WHATSAPP
-  // ==========================================================================
-  checkoutWhatsappBtn.addEventListener('click', () => {
-    if (cart.length === 0) return;
-
-    const cfg = window.STORE_CONFIG || {};
-    const rawNumber = cfg.whatsappNumber || '5511999999999';
-    const cleanNumber = rawNumber.replace(/\D/g, '');
-
-    const name = customerName.value.trim();
-    const city = customerCity.value.trim();
-    const total = formatPrice(calculateCartTotal());
-
-    let message = `${cfg.orderGreeting || 'Olá, Freelancer Discos! Gostaria de comprar os seguintes vinis:'}\n\n`;
-
-    cart.forEach((item, index) => {
-      message += `${index + 1}. *${item.artista}* — _${item.titulo}_ (${item.caixa}) • ${formatPrice(item.preco)}\n`;
+    this.footer.style.display = 'block';
+    cartManager.items.forEach(item => {
+      this.itemsList.appendChild(this.createCartItemElement(item));
     });
-
-    message += `\n*Total dos Discos:* ${total}\n`;
-
-    if (name) {
-      message += `*Nome:* ${name}\n`;
-    }
-    if (city) {
-      message += `*Local/Frete:* ${city}\n`;
-    }
-
-    message += `\nAguardo a confirmação dos dados e dados para pagamento via Pix. Obrigado!`;
-
-    const encodedMsg = encodeURIComponent(message);
-    const whatsappUrl = `https://wa.me/${cleanNumber}?text=${encodedMsg}`;
-
-    window.open(whatsappUrl, '_blank', 'noopener');
-  });
-
-  // ==========================================================================
-  // 10. MENU MOBILE (HAMBURGUER)
-  // ==========================================================================
-  if (menuToggle && mobileMenu) {
-    menuToggle.addEventListener('click', () => {
-      mobileMenu.classList.toggle('open');
-    });
-
-    mobileLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.remove('open');
-      });
-    });
+    this.subtotal.textContent = Formatters.formatCurrency(cartManager.calculateTotal());
   }
+};
 
-  // ==========================================================================
-  // 11. CARROSSEL DE FOTOS DO ESPAÇO (QUEM SOMOS)
-  // ==========================================================================
-  function initAboutCarousel() {
+// ============================================================================
+// 9. COMPONENTE: CARROSSEL DE FOTOS (QUEM SOMOS)
+// ============================================================================
+const CarouselComponent = {
+  init() {
     const track = document.getElementById('carouselTrack');
     const slides = document.querySelectorAll('.carousel-slide');
     const prevBtn = document.getElementById('carouselPrevBtn');
     const nextBtn = document.getElementById('carouselNextBtn');
     const dots = document.querySelectorAll('.carousel-dot');
     const counterNum = document.getElementById('currentSlideNum');
-    
+
     if (!track || slides.length === 0) return;
 
     let currentIndex = 0;
     const totalSlides = slides.length;
 
-    function goToSlide(index) {
-      if (index < 0) {
-        currentIndex = totalSlides - 1;
-      } else if (index >= totalSlides) {
-        currentIndex = 0;
-      } else {
-        currentIndex = index;
-      }
+    const goToSlide = (targetIndex) => {
+      if (targetIndex < 0) currentIndex = totalSlides - 1;
+      else if (targetIndex >= totalSlides) currentIndex = 0;
+      else currentIndex = targetIndex;
 
-      // Desloca o trilho com animação CSS suave
       track.style.transform = `translateX(-${currentIndex * 100}%)`;
 
-      // Atualiza classes ativas nos slides
       slides.forEach((slide, i) => {
-        slide.classList.toggle('is-active', i === currentIndex);
-        slide.setAttribute('aria-hidden', i !== currentIndex ? 'true' : 'false');
+        const isActive = i === currentIndex;
+        slide.classList.toggle('is-active', isActive);
+        slide.setAttribute('aria-hidden', isActive ? 'false' : 'true');
       });
 
-      // Atualiza dots indicadores
       dots.forEach((dot, i) => {
-        dot.classList.toggle('is-active', i === currentIndex);
-        dot.setAttribute('aria-selected', i === currentIndex ? 'true' : 'false');
+        const isActive = i === currentIndex;
+        dot.classList.toggle('is-active', isActive);
+        dot.setAttribute('aria-selected', isActive ? 'true' : 'false');
       });
 
-      // Atualiza badge numérico editorial (ex: 01, 02, 03)
       if (counterNum) {
         counterNum.textContent = String(currentIndex + 1).padStart(2, '0');
       }
-    }
+    };
 
-    if (prevBtn) {
-      prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
-    }
+    prevBtn?.addEventListener('click', () => goToSlide(currentIndex - 1));
+    nextBtn?.addEventListener('click', () => goToSlide(currentIndex + 1));
+    dots.forEach((dot, i) => dot.addEventListener('click', () => goToSlide(i)));
 
-    if (nextBtn) {
-      nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
-    }
-
-    dots.forEach((dot, i) => {
-      dot.addEventListener('click', () => goToSlide(i));
-    });
-
-    // Suporte a Touch Swipe no Mobile
+    // Suporte a swipe em tela sensível ao toque
     let touchStartX = 0;
-    let touchEndX = 0;
-
     track.addEventListener('touchstart', (e) => {
       touchStartX = e.changedTouches[0].screenX;
     }, { passive: true });
 
     track.addEventListener('touchend', (e) => {
-      touchEndX = e.changedTouches[0].screenX;
-      const swipeDistance = touchStartX - touchEndX;
-      if (swipeDistance > 40) {
-        goToSlide(currentIndex + 1);
-      } else if (swipeDistance < -40) {
-        goToSlide(currentIndex - 1);
-      }
+      const distance = touchStartX - e.changedTouches[0].screenX;
+      if (distance > CONFIG.SWIPE_THRESHOLD_PX) goToSlide(currentIndex + 1);
+      else if (distance < -CONFIG.SWIPE_THRESHOLD_PX) goToSlide(currentIndex - 1);
     }, { passive: true });
 
     goToSlide(0);
   }
+};
 
-  // ==========================================================================
-  // 12. INICIALIZAÇÃO
-  // ==========================================================================
-  initAboutCarousel();
-  loadCatalog();
-  updateCartBadges();
-  renderCartDrawer();
+// ============================================================================
+// 10. COMPONENTE: CONFIGURAÇÃO INSTITUCIONAL DA LOJA
+// ============================================================================
+const StoreConfigComponent = {
+  apply() {
+    const cfg = window.STORE_CONFIG || {};
+
+    this.setText('footerWhatsappText', cfg.whatsappFormatted ? `WhatsApp: ${cfg.whatsappFormatted}` : null);
+    this.setText('storeEmail', cfg.email);
+    this.setText('footerEmailText', cfg.email);
+    this.setText('storeInstagram', cfg.instagram ? `${cfg.instagram} no Instagram →` : null);
+    this.setText('footerInstagramText', cfg.instagram);
+    this.setText('storeAddress', cfg.address);
+
+    const directBtn = document.getElementById('directWhatsappBtn');
+    if (directBtn && cfg.whatsappNumber) {
+      const phone = cfg.whatsappNumber.replace(/\D/g, '');
+      const msg = encodeURIComponent('Olá, Freelancer Discos! Estava navegando no site e gostaria de falar com a equipe de curadoria.');
+      directBtn.href = `https://wa.me/${phone}?text=${msg}`;
+    }
+  },
+
+  setText(id, value) {
+    if (!value) return;
+    const el = document.getElementById(id);
+    if (el) el.textContent = value;
+  }
+};
+
+// ============================================================================
+// 11. INICIALIZAÇÃO DA APLICAÇÃO (APP CONTROLLER)
+// ============================================================================
+document.addEventListener('DOMContentLoaded', async () => {
+  // Estado
+  let allRecords = [];
+  let filteredRecords = [];
+  let displayedCount = CONFIG.PAGE_SIZE;
+  let searchTerm = '';
+
+  const cartManager = new CartManager(StorageService.loadCart());
+
+  // Inicializa Views
+  CatalogView.init();
+  CartView.init();
+  CarouselComponent.init();
+  StoreConfigComponent.apply();
+
+  // Helper para persistir e sincronizar sacola
+  const syncCartState = () => {
+    StorageService.saveCart(cartManager.items);
+    CartView.updateBadges(cartManager.getCount(), cartManager);
+    CartView.render(cartManager);
+  };
+
+  // Filtragem de catálogo
+  const applyCatalogFilter = () => {
+    const cleanSearch = Formatters.normalizeSearchText(searchTerm);
+    filteredRecords = allRecords.filter(record => {
+      if (!cleanSearch) return true;
+      const cleanArtist = Formatters.normalizeSearchText(record.artista);
+      const cleanTitle = Formatters.normalizeSearchText(record.titulo);
+      return cleanArtist.includes(cleanSearch) || cleanTitle.includes(cleanSearch);
+    });
+
+    displayedCount = CONFIG.PAGE_SIZE;
+    CatalogView.renderRecords(filteredRecords, cartManager, displayedCount);
+  };
+
+  // Carregamento de dados
+  CatalogView.renderLoading();
+  try {
+    allRecords = await CatalogService.loadAllRecords();
+    filteredRecords = [...allRecords];
+    CatalogView.renderRecords(filteredRecords, cartManager, displayedCount);
+  } catch (err) {
+    console.error('Erro ao carregar catálogo:', err);
+    CatalogView.renderError();
+  }
+
+  // Sincroniza visual inicial da sacola
+  syncCartState();
+
+  // Busca e debounce
+  const searchInput = document.getElementById('searchInput');
+  const searchClear = document.getElementById('searchClear');
+  let debounceTimer = null;
+
+  searchInput?.addEventListener('input', (e) => {
+    searchTerm = e.target.value;
+    if (searchClear) searchClear.style.display = searchTerm ? 'grid' : 'none';
+
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(applyCatalogFilter, CONFIG.SEARCH_DEBOUNCE_MS);
+  });
+
+  searchClear?.addEventListener('click', () => {
+    searchInput.value = '';
+    searchTerm = '';
+    searchClear.style.display = 'none';
+    applyCatalogFilter();
+    searchInput.focus();
+  });
+
+  // Paginação
+  document.getElementById('loadMoreBtn')?.addEventListener('click', () => {
+    displayedCount += CONFIG.PAGE_SIZE;
+    CatalogView.renderRecords(filteredRecords, cartManager, displayedCount);
+  });
+
+  // Ações da Sacola
+  const handleAddToCart = (recordId) => {
+    const record = allRecords.find(r => r.id === recordId);
+    if (!record) return;
+
+    if (cartManager.has(recordId)) {
+      CartView.open();
+      return;
+    }
+
+    cartManager.add(record);
+    syncCartState();
+    CartView.pulseButtons();
+  };
+
+  const handleRemoveFromCart = (recordId) => {
+    cartManager.remove(recordId);
+    syncCartState();
+  };
+
+  // Eventos delegados de clique (Adicionar / Remover)
+  document.addEventListener('click', (e) => {
+    const addBtn = e.target.closest('[data-action="add-cart"]');
+    if (addBtn) {
+      handleAddToCart(Number(addBtn.getAttribute('data-id')));
+      return;
+    }
+
+    const removeBtn = e.target.closest('[data-action="remove-item"]');
+    if (removeBtn) {
+      handleRemoveFromCart(Number(removeBtn.getAttribute('data-id')));
+      return;
+    }
+  });
+
+  // Controles do Drawer
+  document.getElementById('cartTrigger')?.addEventListener('click', () => CartView.open());
+  document.getElementById('floatingCartBtn')?.addEventListener('click', () => CartView.open());
+  document.getElementById('drawerCloseBtn')?.addEventListener('click', () => CartView.close());
+  document.getElementById('cartOverlay')?.addEventListener('click', () => CartView.close());
+  document.getElementById('clearCartBtn')?.addEventListener('click', () => {
+    cartManager.clear();
+    syncCartState();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && CartView.drawer?.classList.contains('open')) {
+      CartView.close();
+    }
+  });
+
+  // Finalização do Pedido via WhatsApp
+  document.getElementById('checkoutWhatsappBtn')?.addEventListener('click', () => {
+    if (cartManager.getCount() === 0) return;
+
+    const customerName = document.getElementById('customerName')?.value.trim() || '';
+    const customerCity = document.getElementById('customerCity')?.value.trim() || '';
+    const checkoutUrl = OrderService.buildCheckoutUrl(cartManager, customerName, customerCity);
+
+    window.open(checkoutUrl, '_blank', 'noopener');
+  });
+
+  // Menu Mobile
+  const menuToggle = document.getElementById('menuToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuToggle?.addEventListener('click', () => mobileMenu?.classList.toggle('open'));
+  document.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', () => mobileMenu?.classList.remove('open'));
+  });
 });
