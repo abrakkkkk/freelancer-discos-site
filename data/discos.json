@@ -1,7 +1,51 @@
 [
   {
-    "id": 21156,
+    "id": 20935,
     "numero": 1,
+    "artista": "Adriana Calcanhotto",
+    "titulo": "Margem",
+    "preco": 450,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": "https://i.discogs.com/bTTf7RS2h5Uk0BRkPW5zjlrdMYpco4p-1L_uONrm5a8/rs:fit/g:sm/q:90/h:603/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE0NzI3/MTk2LTE1ODA0MTYx/NTMtODE4OS5qcGVn.jpeg",
+    "observacao": null
+  },
+  {
+    "id": 20957,
+    "numero": 2,
+    "artista": "Adriana Calcanhotto",
+    "titulo": "Remix Século XXI",
+    "preco": 300,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": "https://i.discogs.com/WicvWks_3bvMRTtKBsrRPB2DzihQu1qEIRrf6chC76g/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE2OTY0/NzI3LTE2MTA4NDkx/NTUtMTU0MS5qcGVn.jpeg",
+    "observacao": null
+  },
+  {
+    "id": 20934,
+    "numero": 3,
+    "artista": "Adriana Calcanhotto",
+    "titulo": "Partimpim Tlês",
+    "preco": 300,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
+    "id": 20987,
+    "numero": 4,
+    "artista": "Adriana Calcanhotto",
+    "titulo": "Só",
+    "preco": 300,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": "https://i.discogs.com/ZDiSs4ZJMolkp9yG1ps0DbyENYgO0dmpoBSTnynXe4A/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE1NzM1/MzU2LTE1OTY4MjAz/NjYtNTQxNC5qcGVn.jpeg",
+    "observacao": null
+  },
+  {
+    "id": 21156,
+    "numero": 5,
     "artista": "Bonobo",
     "titulo": "Black Sands",
     "preco": 250,
@@ -12,7 +56,7 @@
   },
   {
     "id": 21068,
-    "numero": 2,
+    "numero": 6,
     "artista": "Christelle Bofale",
     "titulo": "Swim Team",
     "preco": 285,
@@ -22,8 +66,41 @@
     "observacao": null
   },
   {
+    "id": 20938,
+    "numero": 7,
+    "artista": "Lulu Santos",
+    "titulo": "Luiz Mauricio",
+    "preco": 160,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": "https://i.discogs.com/Gv34ngdfWxjkd8JpoPBb10qRNhjUMlbUyExWZevco3A/rs:fit/g:sm/q:90/h:537/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTgwODM1/NjItMTU4NjI2Nzc0/OS02ODQ0LmpwZWc.jpeg",
+    "observacao": null
+  },
+  {
+    "id": 20914,
+    "numero": 8,
+    "artista": "Mundo Livre S/A",
+    "titulo": "Samba Esquema Noise",
+    "preco": 250,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": "https://i.discogs.com/fGvObWZdRCiGdfkpb60Wa_rVau6LTFwhfbVccwkV9VY/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMyNDEy/Njc1LTE3MzI5OTQ3/NzktNjc2OS5qcGVn.jpeg",
+    "observacao": null
+  },
+  {
+    "id": 20991,
+    "numero": 9,
+    "artista": "The Bossa Três",
+    "titulo": "The Bossa Três",
+    "preco": 250,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": "https://i.discogs.com/flC_sT1oUJSWkXv4MiwG_l9bvZluswfVLj_zpS-2_b8/rs:fit/g:sm/q:90/h:256/w:256/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI4NTE1/OTYtMTQ2NjgzMjE4/OC0zMzIyLmpwZWc.jpeg",
+    "observacao": null
+  },
+  {
     "id": 21030,
-    "numero": 3,
+    "numero": 10,
     "artista": "The Shacks",
     "titulo": "Big Crown Vaults Vol. 2",
     "preco": 250,
@@ -34,7 +111,7 @@
   },
   {
     "id": 21045,
-    "numero": 4,
+    "numero": 11,
     "artista": "...Featuring",
     "titulo": "Norah Jones",
     "preco": 380,
@@ -44,19 +121,19 @@
     "observacao": null
   },
   {
-    "id": 21043,
-    "numero": 5,
-    "artista": "Adele",
-    "titulo": "19",
-    "preco": 285,
-    "caixa": "Caixa 50",
+    "id": 20972,
+    "numero": 12,
+    "artista": "5 a Seco",
+    "titulo": "Sentido",
+    "preco": 200,
+    "caixa": "Caixa 49",
     "ano": null,
-    "capa_url": "https://i.discogs.com/O6yhGT7SMs1k1Aqke-enhPenpXc4e4p9Y3xvkbtLYG0/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEyNjcw/NjAtMTY3NDE1Njg4/Ny0xMjc1LmpwZWc.jpeg",
+    "capa_url": "https://i.discogs.com/Z8PaQ4zFB49EQ87Q6W9GxjisqDUoVBuy_ORDgRO30hY/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM1MzM4/NzYyLTE3NjI4MzAw/MjEtNzkyNi5qcGVn.jpeg",
     "observacao": null
   },
   {
     "id": 21038,
-    "numero": 6,
+    "numero": 13,
     "artista": "Adele",
     "titulo": "19",
     "preco": 285,
@@ -67,7 +144,7 @@
   },
   {
     "id": 21094,
-    "numero": 7,
+    "numero": 14,
     "artista": "Adele",
     "titulo": "30",
     "preco": 350,
@@ -77,8 +154,19 @@
     "observacao": null
   },
   {
+    "id": 21043,
+    "numero": 15,
+    "artista": "Adele",
+    "titulo": "19",
+    "preco": 285,
+    "caixa": "Caixa 50",
+    "ano": null,
+    "capa_url": "https://i.discogs.com/O6yhGT7SMs1k1Aqke-enhPenpXc4e4p9Y3xvkbtLYG0/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEyNjcw/NjAtMTY3NDE1Njg4/Ny0xMjc1LmpwZWc.jpeg",
+    "observacao": null
+  },
+  {
     "id": 21073,
-    "numero": 8,
+    "numero": 16,
     "artista": "Adna",
     "titulo": "Run, Lucifer",
     "preco": 285,
@@ -88,8 +176,63 @@
     "observacao": null
   },
   {
+    "id": 20888,
+    "numero": 17,
+    "artista": "Adrianna Calcanhotto",
+    "titulo": "A Mulher do Pau Brasil / O Cu do Mundo",
+    "preco": 300,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
+    "id": 20976,
+    "numero": 18,
+    "artista": "Aguidavi do Jêje",
+    "titulo": "Aguidavi do Jêje",
+    "preco": 250,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": "https://i.discogs.com/TXmn14rPN1M9Vn0QjOeHhm-WWOP2EW8t3Iiidoch37U/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI5MTE4/Njk0LTE3MDM4MDYx/NDAtNTAwNC5qcGVn.jpeg",
+    "observacao": null
+  },
+  {
+    "id": 20898,
+    "numero": 19,
+    "artista": "Aíla",
+    "titulo": "Em Cada Verso um Contra-ataque",
+    "preco": 130,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": "https://i.discogs.com/zjytxn7XROmzQmj45OKudg37H287vLFM4duLvskSxKE/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEzMTIy/NDYwLTE1NDg0NDgy/NjItODM2OC5qcGVn.jpeg",
+    "observacao": null
+  },
+  {
+    "id": 20933,
+    "numero": 20,
+    "artista": "Aláfia",
+    "titulo": "Além Do Lá",
+    "preco": 200,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": "https://i.discogs.com/uLzZgGcd8W6mnbSL78fDEO3aycJGit6jEiSDFZhWkD8/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI5OTMx/MjI5LTE3MDg5NzA4/OTYtNDQyNS5qcGVn.jpeg",
+    "observacao": null
+  },
+  {
+    "id": 20952,
+    "numero": 21,
+    "artista": "Alberto Rosenblit e Mario Adnet",
+    "titulo": "Alberto Rosenblit e Mario Adnet",
+    "preco": 250,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": "https://i.discogs.com/Ii5FMCgiYmBr7B9oUK2vJmnuF_kIR-4U2VquzcaajfI/rs:fit/g:sm/q:90/h:599/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQ2MDYy/NDgtMTYyNjA4NTg5/OC01MDgzLmpwZWc.jpeg",
+    "observacao": null
+  },
+  {
     "id": 21937,
-    "numero": 9,
+    "numero": 22,
     "artista": "Alceu Valença",
     "titulo": "Molhado de Suor",
     "preco": 350,
@@ -99,8 +242,19 @@
     "observacao": null
   },
   {
+    "id": 20995,
+    "numero": 23,
+    "artista": "Alessandra Leão",
+    "titulo": "Dois Cordões",
+    "preco": 270,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": "https://i.discogs.com/-D8BJygxSf8NLPhxBNsOgmlX_bqF7I1zppbFjwYNnNc/rs:fit/g:sm/q:90/h:372/w:400/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE2OTY0/NTM1LTE2MTA4NDU5/NDctMzAxMS5qcGVn.jpeg",
+    "observacao": null
+  },
+  {
     "id": 21150,
-    "numero": 10,
+    "numero": 24,
     "artista": "Alice Cooper",
     "titulo": "Detroit Stories",
     "preco": 350,
@@ -110,8 +264,19 @@
     "observacao": null
   },
   {
+    "id": 20988,
+    "numero": 25,
+    "artista": "Aline Wirley",
+    "titulo": "Indômita",
+    "preco": 300,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": "https://i.discogs.com/_CszNczbr6dY5K-bILnIKzkZvc7eQ6GmndiZy9bBvNc/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE4NTM2/NDQzLTE2MTk4OTE2/MTAtMjQyMy5qcGVn.jpeg",
+    "observacao": null
+  },
+  {
     "id": 21092,
-    "numero": 11,
+    "numero": 26,
     "artista": "Amy Winehouse",
     "titulo": "The Ska Collection",
     "preco": 300,
@@ -121,8 +286,41 @@
     "observacao": null
   },
   {
+    "id": 20968,
+    "numero": 27,
+    "artista": "Ana Canas",
+    "titulo": "Tô na Vida",
+    "preco": 285,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": "https://i.discogs.com/_UxokK3FrU3MpmBOILJmepscoO6QiYrsec6t_z-2bHs/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEwMzQz/MjkxLTE0OTU3OTk2/OTktODgzMi5qcGVn.jpeg",
+    "observacao": null
+  },
+  {
+    "id": 20901,
+    "numero": 28,
+    "artista": "Ana Clara",
+    "titulo": "Canções de Depois",
+    "preco": 75,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": "https://i.discogs.com/o-xPZXftC-kaZqPLG2UAkJIHPpOgI5HH6wttOrqGr0I/rs:fit/g:sm/q:90/h:579/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTcxNDY5/MzUtMTYzNjk1MjE4/OS03NjU5LmpwZWc.jpeg",
+    "observacao": null
+  },
+  {
+    "id": 20889,
+    "numero": 29,
+    "artista": "Ana Frango Elétrico",
+    "titulo": "Little Electric Chicken Heart",
+    "preco": 285,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": "https://i.discogs.com/1PZmymOr9FVpQRWizJZmQWAcCpyYWkHM7dcwLWjSORI/rs:fit/g:sm/q:90/h:584/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE1MTEx/MDM2LTE1OTMxODMz/NDEtNTUwMy5qcGVn.jpeg",
+    "observacao": null
+  },
+  {
     "id": 22708,
-    "numero": 12,
+    "numero": 30,
     "artista": "Ana Frango Elétrico",
     "titulo": "Little Electric",
     "preco": 400,
@@ -132,8 +330,41 @@
     "observacao": null
   },
   {
+    "id": 26808,
+    "numero": 31,
+    "artista": "Ana Frango Elétrico",
+    "titulo": "Me Chama De Gato Que Eu Sou Sua",
+    "preco": 250,
+    "caixa": "Caixa 49",
+    "ano": "2024",
+    "capa_url": "https://i.discogs.com/thuCbRqTLrlQcVpwZwiO_FMSj9hX338TZIf-ndMWhI4/rs:fit/g:sm/q:90/h:596/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMwNDg0/MTg0LTE3MTM4OTEz/NjgtNzI5Ny5qcGVn.jpeg",
+    "observacao": null
+  },
+  {
+    "id": 20937,
+    "numero": 32,
+    "artista": "Anelis Assumpçao",
+    "titulo": "Sal",
+    "preco": 150,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
+    "id": 20963,
+    "numero": 33,
+    "artista": "Anelis Assumpçao",
+    "titulo": "Amigos Imaginários",
+    "preco": 350,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
     "id": 23219,
-    "numero": 13,
+    "numero": 34,
     "artista": "Anita Baker",
     "titulo": "Rapture",
     "preco": 185,
@@ -144,7 +375,7 @@
   },
   {
     "id": 21024,
-    "numero": 14,
+    "numero": 35,
     "artista": "Antonio Carlos Jobim",
     "titulo": "Urubu",
     "preco": 200,
@@ -155,7 +386,7 @@
   },
   {
     "id": 23305,
-    "numero": 15,
+    "numero": 36,
     "artista": "Bacamarte",
     "titulo": "Depois do Fim",
     "preco": 300,
@@ -166,84 +397,95 @@
   },
   {
     "id": 21151,
-    "numero": 16,
+    "numero": 37,
     "artista": "Banco",
     "titulo": "Buone Notizie",
     "preco": 200,
     "caixa": "Caixa 51",
     "ano": null,
-    "capa_url": "https://i.discogs.com/ZdZ93xx9a41itdIANCV2b0k9qzN2htuO1TbqyqIzTOM/rs:fit/g:sm/q:90/h:598/w:595/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE3MzM3/NTktMTIzOTg5ODcw/NC5qcGVn.jpeg",
+    "capa_url": null,
     "observacao": null
   },
   {
     "id": 21128,
-    "numero": 17,
+    "numero": 38,
     "artista": "Banco",
     "titulo": "Urgentissimo",
     "preco": 200,
     "caixa": "Caixa 51",
     "ano": null,
-    "capa_url": "https://i.discogs.com/FrWKaoREwNDURZnQSPSmYABBFkV6Y3RNnjr7wJ8T5nY/rs:fit/g:sm/q:90/h:600/w:589/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE3MzA5/MzEtMTIzOTcxNDM3/Mi5qcGVn.jpeg",
+    "capa_url": null,
+    "observacao": null
+  },
+  {
+    "id": 20959,
+    "numero": 39,
+    "artista": "Bebel Gilberto",
+    "titulo": "Agora",
+    "preco": 180,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": null,
     "observacao": null
   },
   {
     "id": 21018,
-    "numero": 18,
+    "numero": 40,
     "artista": "Ben Folds Five",
     "titulo": "The Sound of the Life of the Mind",
     "preco": 170,
     "caixa": "Caixa 50",
     "ano": null,
-    "capa_url": "https://i.discogs.com/lS7ajbvL9MoseybAaIQbu7ofArxD0uX_8YoeKog1NvA/rs:fit/g:sm/q:90/h:500/w:500/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM4ODM1/MjItMTM0Nzk5NTk2/Ny01NTE4LmpwZWc.jpeg",
+    "capa_url": null,
     "observacao": null
   },
   {
     "id": 21145,
-    "numero": 19,
+    "numero": 41,
     "artista": "Beta Radio",
     "titulo": "Year Of Love",
     "preco": 200,
     "caixa": "Caixa 51",
     "ano": null,
-    "capa_url": "https://i.discogs.com/JQLudrYNh_qyrULiSzHUXK_dBuhhkWZed9wDNvnPTfM/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIxMTQ5/NDAxLTE2MzgwNzQw/MjItNzU4My5qcGVn.jpeg",
+    "capa_url": null,
     "observacao": null
   },
   {
     "id": 22827,
-    "numero": 20,
+    "numero": 42,
     "artista": "Big Little Lies",
     "titulo": "Big Little Lies - Music from the HBO Limited Series",
     "preco": 350,
     "caixa": "Caixa 50",
     "ano": null,
-    "capa_url": "https://i.discogs.com/JznR0DIYf4vcOiczmgJyrNMVZvUNlqeWWt-l68vx7Tg/rs:fit/g:sm/q:90/h:595/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEwNjQ4/MTkxLTE1MjQzNTM4/MjUtNzkyNS5qcGVn.jpeg",
+    "capa_url": null,
     "observacao": null
   },
   {
     "id": 22703,
-    "numero": 21,
+    "numero": 43,
     "artista": "Billie Eilish",
     "titulo": "Happier Than Ever",
     "preco": 395,
     "caixa": "Caixa 50",
     "ano": null,
-    "capa_url": "https://i.discogs.com/DuNmW66kWPhbKPSTOafnJTUSgc6qIpZZO0jEClEt9JE/rs:fit/g:sm/q:90/h:601/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5Njc3/MzMxLTE2MjgxMTM1/OTItMzQ4Ni5qcGVn.jpeg",
+    "capa_url": null,
     "observacao": null
   },
   {
     "id": 21137,
-    "numero": 22,
+    "numero": 44,
     "artista": "Birdy",
     "titulo": "Young Heart",
     "preco": 380,
     "caixa": "Caixa 51",
     "ano": null,
-    "capa_url": "https://i.discogs.com/0-aPx2NyEkAwg0yoJ8LIWsM6yJmOMWAE-rfbzfSoZwk/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE4NTI1/NjczLTE2MTk3Nzkx/NDItMzczNi5qcGVn.jpeg",
+    "capa_url": null,
     "observacao": null
   },
   {
     "id": 23290,
-    "numero": 23,
+    "numero": 45,
     "artista": "Bogarins",
     "titulo": "Bacuri",
     "preco": 300,
@@ -254,7 +496,7 @@
   },
   {
     "id": 21040,
-    "numero": 24,
+    "numero": 46,
     "artista": "Bruno Mars",
     "titulo": "Doo-Woops And Hooligans",
     "preco": 295,
@@ -265,51 +507,73 @@
   },
   {
     "id": 22706,
-    "numero": 25,
+    "numero": 47,
     "artista": "Bryan Behr",
     "titulo": "Todas as coisas do coração",
     "preco": 250,
     "caixa": "Caixa 50",
     "ano": null,
-    "capa_url": "https://i.discogs.com/-Vj9swEJBlzPf8iCviHN2lASroare2PsMcO5_D3suAo/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI4MDgy/MjM2LTE2OTMwNTU3/NDItODMyNC5qcGVn.jpeg",
+    "capa_url": null,
     "observacao": null
   },
   {
-    "id": 21078,
-    "numero": 26,
-    "artista": "Carrie Underwood",
-    "titulo": "My Savior",
-    "preco": 395,
-    "caixa": "Caixa 51",
+    "id": 20894,
+    "numero": 48,
+    "artista": "Caetano Veloso",
+    "titulo": "Meu Coco",
+    "preco": 280,
+    "caixa": "Caixa 49",
     "ano": null,
-    "capa_url": "https://i.discogs.com/V5tCqV3H0w3bRkbt04Z0voMZnH5ePV10dAf194A9zTQ/rs:fit/g:sm/q:90/h:518/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE4NTYy/MjY3LTE2MjgxMDc5/MjYtNjI3Mi5qcGVn.jpeg",
+    "capa_url": null,
+    "observacao": null
+  },
+  {
+    "id": 20926,
+    "numero": 49,
+    "artista": "Cansei de Ser Sexy",
+    "titulo": "Cansei de Ser Sexy",
+    "preco": 200,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": null,
     "observacao": null
   },
   {
     "id": 21112,
-    "numero": 27,
+    "numero": 50,
     "artista": "Carrie Underwood",
     "titulo": "Some Hearts",
     "preco": 395,
     "caixa": "Caixa 51",
     "ano": null,
-    "capa_url": "https://i.discogs.com/9BoTm-gvcoOux0HMFrBjhn35zlLPd0Ui-migJpqprEg/rs:fit/g:sm/q:90/h:598/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEyMDg1/MTEtMTQ5NTcwMjY1/OS0yOTQ1LmpwZWc.jpeg",
+    "capa_url": null,
     "observacao": null
   },
   {
-    "id": 21110,
-    "numero": 28,
+    "id": 21080,
+    "numero": 51,
     "artista": "Carrie Underwood",
-    "titulo": "Greatest Hits: Decade #1",
+    "titulo": "Cry Pretty",
+    "preco": 285,
+    "caixa": "Caixa 51",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
+    "id": 21078,
+    "numero": 52,
+    "artista": "Carrie Underwood",
+    "titulo": "My Savior",
     "preco": 395,
     "caixa": "Caixa 51",
     "ano": null,
-    "capa_url": "https://i.discogs.com/6EdMlwKpWMd_X9BaPeBiWvVZuj_-1BUADg7ZuG3nXl8/rs:fit/g:sm/q:90/h:340/w:340/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIwOTI5/MDEyLTE2MzY1ODIx/NzktOTA2My5qcGVn.jpeg",
+    "capa_url": null,
     "observacao": null
   },
   {
     "id": 21109,
-    "numero": 29,
+    "numero": 53,
     "artista": "Carrie Underwood",
     "titulo": "Storytelling",
     "preco": 385,
@@ -319,85 +583,228 @@
     "observacao": null
   },
   {
-    "id": 21080,
-    "numero": 30,
+    "id": 21110,
+    "numero": 54,
     "artista": "Carrie Underwood",
-    "titulo": "Cry Pretty",
-    "preco": 285,
+    "titulo": "Greatest Hits: Decade #1",
+    "preco": 395,
     "caixa": "Caixa 51",
     "ano": null,
-    "capa_url": "https://i.discogs.com/RXL7zMBEJWNlBE7jirlYC-J2BQqkIgdbQMcFwZN_i3E/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEyNTIy/NzY3LTE1MzY5MzQz/MjMtMjQwOC5qcGVn.jpeg",
+    "capa_url": null,
+    "observacao": null
+  },
+  {
+    "id": 20913,
+    "numero": 55,
+    "artista": "Catto",
+    "titulo": "Caminhos Selvagens",
+    "preco": 250,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": null,
     "observacao": null
   },
   {
     "id": 21047,
-    "numero": 31,
+    "numero": 56,
     "artista": "Celine Dion",
     "titulo": "Courage",
     "preco": 400,
     "caixa": "Caixa 50",
     "ano": null,
-    "capa_url": "https://i.discogs.com/LNpYLLwrEstbUZ4Fmho0lultZS_zrOVST2ViPY23Wx0/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE0Nzg5/NzAyLTE2Njk5ODY1/NDQtNDU3Mi5qcGVn.jpeg",
-    "observacao": null
-  },
-  {
-    "id": 21108,
-    "numero": 32,
-    "artista": "Celine Dion",
-    "titulo": "These Are Special Times",
-    "preco": 385,
-    "caixa": "Caixa 51",
-    "ano": null,
-    "capa_url": "https://i.discogs.com/_aUsnOmScvBZu2rG-FXnLr8ubJ3cdakjPuJ-npp8p0U/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEyNjU2/NjgxLTE2Njk5ODk2/MTUtNTk5My5qcGVn.jpeg",
-    "observacao": null
-  },
-  {
-    "id": 21050,
-    "numero": 33,
-    "artista": "Celine Dion",
-    "titulo": "Falling Into You",
-    "preco": 380,
-    "caixa": "Caixa 50",
-    "ano": null,
-    "capa_url": "https://i.discogs.com/IoHgk0Rc84cp2888wT5KrrMqNAn3fXZK5_T6vFA2ODA/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEyNjQ0/MDU4LTE2NzAwNzAx/NjQtMTQ0Ni5qcGVn.jpeg",
+    "capa_url": null,
     "observacao": null
   },
   {
     "id": 21046,
-    "numero": 34,
+    "numero": 57,
     "artista": "Celine Dion",
     "titulo": "Let's Talk About Love",
     "preco": 385,
     "caixa": "Caixa 50",
     "ano": null,
-    "capa_url": "https://i.discogs.com/HYe9vdoFtWj455tRFlPLUJaMcbCH-AaYqywMsTidUp0/rs:fit/g:sm/q:90/h:581/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTYzNjIx/Ny0xMjIyMjk0MzMw/LmpwZWc.jpeg",
+    "capa_url": null,
+    "observacao": null
+  },
+  {
+    "id": 21108,
+    "numero": 58,
+    "artista": "Celine Dion",
+    "titulo": "These Are Special Times",
+    "preco": 385,
+    "caixa": "Caixa 51",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
+    "id": 21050,
+    "numero": 59,
+    "artista": "Celine Dion",
+    "titulo": "Falling Into You",
+    "preco": 380,
+    "caixa": "Caixa 50",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
+    "id": 20917,
+    "numero": 60,
+    "artista": "Céu",
+    "titulo": "Acústico",
+    "preco": 350,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
+    "id": 20973,
+    "numero": 61,
+    "artista": "Céu",
+    "titulo": "Céu",
+    "preco": 285,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
+    "id": 20915,
+    "numero": 62,
+    "artista": "Céu",
+    "titulo": "Tropix: Instrumental",
+    "preco": 250,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
+    "id": 20905,
+    "numero": 63,
+    "artista": "Chico Buarque",
+    "titulo": "Caravanas",
+    "preco": 300,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
+    "id": 20936,
+    "numero": 64,
+    "artista": "Chico Buarque de Hollanda",
+    "titulo": "Chico Buarque de Hollanda Volume 2",
+    "preco": 150,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
+    "id": 20981,
+    "numero": 65,
+    "artista": "Chico Chico",
+    "titulo": "Estopim",
+    "preco": 250,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
+    "id": 20960,
+    "numero": 66,
+    "artista": "Chico de Buarque de Hollanda",
+    "titulo": "Na Itália",
+    "preco": 180,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
+    "id": 20965,
+    "numero": 67,
+    "artista": "Cícero",
+    "titulo": "A praia",
+    "preco": 450,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
+    "id": 20919,
+    "numero": 68,
+    "artista": "Claudette Soares",
+    "titulo": "Canção de Amor",
+    "preco": 180,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": null,
     "observacao": null
   },
   {
     "id": 21075,
-    "numero": 35,
+    "numero": 69,
     "artista": "Corinne Bailey Rae",
     "titulo": "The Sea",
     "preco": 285,
     "caixa": "Caixa 51",
     "ano": null,
-    "capa_url": "https://i.discogs.com/F1h1rmmD0subHQ8Mg0Mle2WytRtGfY-D5sO0PIWw39Y/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIyOTc1/MDU1LTE2NjQzOTA1/MDctMjY0NS5qcGVn.jpeg",
+    "capa_url": null,
+    "observacao": null
+  },
+  {
+    "id": 20928,
+    "numero": 70,
+    "artista": "Criolo",
+    "titulo": "Sobreviver",
+    "preco": 280,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
+    "id": 20964,
+    "numero": 71,
+    "artista": "Criolo, Amaro & Dino",
+    "titulo": "Criolo, Amaro & Dino",
+    "preco": 250,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
+    "id": 20953,
+    "numero": 72,
+    "artista": "Danilo Caymmi",
+    "titulo": "Cheiro Verde",
+    "preco": 210,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": null,
     "observacao": null
   },
   {
     "id": 21087,
-    "numero": 36,
+    "numero": 73,
     "artista": "Danny Elfman",
     "titulo": "The Girl On The Train - Original Motion Picture Soundtrack",
     "preco": 280,
     "caixa": "Caixa 51",
     "ano": null,
-    "capa_url": "https://i.discogs.com/k41fCoAbZmfSRUqBUmwB_vKW__N_3ca9Y302-aIqCGM/rs:fit/g:sm/q:90/h:606/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTk1MDYz/MTEtMTU3Mzg5NDYx/Ny00OTczLmpwZWc.jpeg",
+    "capa_url": null,
     "observacao": null
   },
   {
     "id": 26811,
-    "numero": 37,
+    "numero": 74,
     "artista": "Danzig",
     "titulo": "Danzig",
     "preco": 300,
@@ -408,7 +815,7 @@
   },
   {
     "id": 21039,
-    "numero": 38,
+    "numero": 75,
     "artista": "Deftones",
     "titulo": "White Pony",
     "preco": 385,
@@ -419,7 +826,7 @@
   },
   {
     "id": 21147,
-    "numero": 39,
+    "numero": 76,
     "artista": "Diana Krall",
     "titulo": "Love Scenes",
     "preco": 350,
@@ -430,7 +837,7 @@
   },
   {
     "id": 21115,
-    "numero": 40,
+    "numero": 77,
     "artista": "Dido",
     "titulo": "Still On My Mind",
     "preco": 300,
@@ -441,7 +848,7 @@
   },
   {
     "id": 23323,
-    "numero": 41,
+    "numero": 78,
     "artista": "Dj Dolores",
     "titulo": "Banda Sonora",
     "preco": 150,
@@ -451,8 +858,19 @@
     "observacao": null
   },
   {
+    "id": 20899,
+    "numero": 79,
+    "artista": "DJ Tudo e sua Gente de Todo Lugar",
+    "titulo": "Nos Quintais do Mundo Melhor",
+    "preco": 150,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
     "id": 24668,
-    "numero": 42,
+    "numero": 80,
     "artista": "Djavan",
     "titulo": "Malásia",
     "preco": 350,
@@ -462,8 +880,41 @@
     "observacao": null
   },
   {
+    "id": 22714,
+    "numero": 81,
+    "artista": "Djonga",
+    "titulo": "Inocente demotape",
+    "preco": 280,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
+    "id": 20927,
+    "numero": 82,
+    "artista": "Djonga",
+    "titulo": "Heresia",
+    "preco": 285,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
+    "id": 20925,
+    "numero": 83,
+    "artista": "Dona Onete",
+    "titulo": "Feitiço Caboclo",
+    "preco": 250,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
     "id": 22710,
-    "numero": 43,
+    "numero": 84,
     "artista": "Dona Onete",
     "titulo": "Feitiço Cabocla",
     "preco": 250,
@@ -474,7 +925,7 @@
   },
   {
     "id": 21081,
-    "numero": 44,
+    "numero": 85,
     "artista": "Ed Motta",
     "titulo": "Behind The Tea Chronicles",
     "preco": 250,
@@ -485,7 +936,7 @@
   },
   {
     "id": 21026,
-    "numero": 45,
+    "numero": 86,
     "artista": "Ed Sheeran",
     "titulo": "Play",
     "preco": 250,
@@ -496,7 +947,7 @@
   },
   {
     "id": 21009,
-    "numero": 46,
+    "numero": 87,
     "artista": "Ed Sheeran",
     "titulo": "Subtract",
     "preco": 250,
@@ -506,8 +957,19 @@
     "observacao": null
   },
   {
+    "id": 20951,
+    "numero": 88,
+    "artista": "Edu Lobo",
+    "titulo": "Edu Lobo",
+    "preco": 280,
+    "caixa": "Caixa 49",
+    "ano": "1973",
+    "capa_url": null,
+    "observacao": null
+  },
+  {
     "id": 21062,
-    "numero": 47,
+    "numero": 89,
     "artista": "Ella Gold",
     "titulo": "The Original Classics",
     "preco": 350,
@@ -517,19 +979,8 @@
     "observacao": null
   },
   {
-    "id": 21102,
-    "numero": 48,
-    "artista": "Ellie Goulding",
-    "titulo": "Lights IO",
-    "preco": 385,
-    "caixa": "Caixa 51",
-    "ano": null,
-    "capa_url": null,
-    "observacao": null
-  },
-  {
     "id": 21061,
-    "numero": 49,
+    "numero": 90,
     "artista": "Ellie Goulding",
     "titulo": "Lights",
     "preco": 285,
@@ -539,8 +990,85 @@
     "observacao": null
   },
   {
+    "id": 21102,
+    "numero": 91,
+    "artista": "Ellie Goulding",
+    "titulo": "Lights IO",
+    "preco": 385,
+    "caixa": "Caixa 51",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
+    "id": 20924,
+    "numero": 92,
+    "artista": "Elza Soares",
+    "titulo": "Senhora da Terra",
+    "preco": 180,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
+    "id": 20922,
+    "numero": 93,
+    "artista": "Elza Soares",
+    "titulo": "Elza Soares",
+    "preco": 180,
+    "caixa": "Caixa 49",
+    "ano": "1974",
+    "capa_url": null,
+    "observacao": null
+  },
+  {
+    "id": 20923,
+    "numero": 94,
+    "artista": "Elza Soares",
+    "titulo": "End of the World Remixes",
+    "preco": 350,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
+    "id": 20971,
+    "numero": 95,
+    "artista": "Elza Soares",
+    "titulo": "Planeta Fome",
+    "preco": 230,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
+    "id": 20970,
+    "numero": 96,
+    "artista": "Elza Soares",
+    "titulo": "Planeta Fome",
+    "preco": 230,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
+    "id": 22712,
+    "numero": 97,
+    "artista": "Emicida",
+    "titulo": "Racional volume 2",
+    "preco": 200,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
     "id": 21129,
-    "numero": 50,
+    "numero": 98,
     "artista": "Emiliana Torrini",
     "titulo": "Love In The Time Of Science",
     "preco": 200,
@@ -550,8 +1078,30 @@
     "observacao": null
   },
   {
+    "id": 20904,
+    "numero": 99,
+    "artista": "Engenheiros do Hawaii",
+    "titulo": "Surfando Karmas & DNA",
+    "preco": 270,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
+    "id": 20930,
+    "numero": 100,
+    "artista": "Face Ácida",
+    "titulo": "Face Ácida",
+    "preco": 150,
+    "caixa": "Caixa 49",
+    "ano": "1994",
+    "capa_url": null,
+    "observacao": null
+  },
+  {
     "id": 21035,
-    "numero": 51,
+    "numero": 101,
     "artista": "Fifty Shades Darker",
     "titulo": "Fifty Shades Darker",
     "preco": 400,
@@ -562,7 +1112,7 @@
   },
   {
     "id": 24681,
-    "numero": 52,
+    "numero": 102,
     "artista": "Fleetwood Mac",
     "titulo": "The Very Best Of Fleetwood Mac",
     "preco": 285,
@@ -573,7 +1123,7 @@
   },
   {
     "id": 21139,
-    "numero": 53,
+    "numero": 103,
     "artista": "Fleurie",
     "titulo": "Love And War",
     "preco": 280,
@@ -583,8 +1133,19 @@
     "observacao": null
   },
   {
+    "id": 20990,
+    "numero": 104,
+    "artista": "Francisco, El Hombre",
+    "titulo": "Rasgacabeza",
+    "preco": 250,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
     "id": 21144,
-    "numero": 54,
+    "numero": 105,
     "artista": "Gabrielle Apin",
     "titulo": "Light Up The Dark",
     "preco": 350,
@@ -594,8 +1155,19 @@
     "observacao": null
   },
   {
+    "id": 20918,
+    "numero": 106,
+    "artista": "Gal Costa",
+    "titulo": "Gal",
+    "preco": 295,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
     "id": 26386,
-    "numero": 55,
+    "numero": 107,
     "artista": "Gal Costa",
     "titulo": "Nenhuma Dor",
     "preco": 220,
@@ -605,8 +1177,30 @@
     "observacao": null
   },
   {
+    "id": 20907,
+    "numero": 108,
+    "artista": "Gilberto Gil",
+    "titulo": "Gilberto Gil",
+    "preco": 250,
+    "caixa": "Caixa 49",
+    "ano": "1971",
+    "capa_url": null,
+    "observacao": null
+  },
+  {
+    "id": 20980,
+    "numero": 109,
+    "artista": "Gilsons",
+    "titulo": "Eu Vejo Luz Em Maior Proporção Do Que Eu Vejo a Escuridão",
+    "preco": 250,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
     "id": 21059,
-    "numero": 56,
+    "numero": 110,
     "artista": "H.E.R",
     "titulo": "H.E.R",
     "preco": 360,
@@ -617,7 +1211,7 @@
   },
   {
     "id": 21086,
-    "numero": 57,
+    "numero": 111,
     "artista": "Hans Zimmer, Rupert Gregson-Williams",
     "titulo": "The Crown (Season One Soundtrack)",
     "preco": 395,
@@ -627,19 +1221,8 @@
     "observacao": null
   },
   {
-    "id": 23220,
-    "numero": 58,
-    "artista": "Herbie Hancock",
-    "titulo": "Takin' Off",
-    "preco": 285,
-    "caixa": "Caixa 50",
-    "ano": null,
-    "capa_url": null,
-    "observacao": null
-  },
-  {
     "id": 23221,
-    "numero": 59,
+    "numero": 112,
     "artista": "Herbie Hancock",
     "titulo": "Takin' Off (Limited Edition)",
     "preco": 285,
@@ -649,8 +1232,30 @@
     "observacao": null
   },
   {
+    "id": 23220,
+    "numero": 113,
+    "artista": "Herbie Hancock",
+    "titulo": "Takin' Off",
+    "preco": 285,
+    "caixa": "Caixa 50",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
+    "id": 20896,
+    "numero": 114,
+    "artista": "Hiatus Kaiyote",
+    "titulo": "Mood Valiant",
+    "preco": 120,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
     "id": 21020,
-    "numero": 60,
+    "numero": 115,
     "artista": "Hilary Duff",
     "titulo": "Metamorphosis",
     "preco": 200,
@@ -660,30 +1265,19 @@
     "observacao": null
   },
   {
-    "id": 21120,
-    "numero": 61,
-    "artista": "Ingrid Michaelson",
-    "titulo": "It doesn't have to make sense",
-    "preco": 200,
-    "caixa": "Caixa 51",
-    "ano": null,
-    "capa_url": null,
-    "observacao": null
-  },
-  {
-    "id": 21096,
-    "numero": 62,
-    "artista": "Ingrid Michaelson",
-    "titulo": "Everybody",
-    "preco": 200,
-    "caixa": "Caixa 51",
+    "id": 20903,
+    "numero": 116,
+    "artista": "Hyldon",
+    "titulo": "Sabor de Amor",
+    "preco": 250,
+    "caixa": "Caixa 49",
     "ano": null,
     "capa_url": null,
     "observacao": null
   },
   {
     "id": 21132,
-    "numero": 63,
+    "numero": 117,
     "artista": "Ingrid Michaelson",
     "titulo": "Girls and Boys",
     "preco": 200,
@@ -693,8 +1287,30 @@
     "observacao": null
   },
   {
+    "id": 21096,
+    "numero": 118,
+    "artista": "Ingrid Michaelson",
+    "titulo": "Everybody",
+    "preco": 200,
+    "caixa": "Caixa 51",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
+    "id": 21120,
+    "numero": 119,
+    "artista": "Ingrid Michaelson",
+    "titulo": "It doesn't have to make sense",
+    "preco": 200,
+    "caixa": "Caixa 51",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
     "id": 21136,
-    "numero": 64,
+    "numero": 120,
     "artista": "Irene Cara",
     "titulo": "What a Feelin'",
     "preco": 250,
@@ -704,8 +1320,30 @@
     "observacao": null
   },
   {
+    "id": 22711,
+    "numero": 121,
+    "artista": "Jão",
+    "titulo": "Anti-herói",
+    "preco": 350,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
+    "id": 20956,
+    "numero": 122,
+    "artista": "João Donato",
+    "titulo": "Gozando a Existência",
+    "preco": 300,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
     "id": 21138,
-    "numero": 65,
+    "numero": 123,
     "artista": "Joep Beving",
     "titulo": "Prehension",
     "preco": 385,
@@ -716,7 +1354,7 @@
   },
   {
     "id": 21006,
-    "numero": 66,
+    "numero": 124,
     "artista": "Jonnata Doll e os Garotos Solventes",
     "titulo": "Jonnata Doll e os Garotos Solventes",
     "preco": 180,
@@ -726,8 +1364,19 @@
     "observacao": null
   },
   {
+    "id": 20958,
+    "numero": 125,
+    "artista": "Jorge Mautner",
+    "titulo": "Não Há Abismo em que o Brasil Caiba",
+    "preco": 250,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
     "id": 24260,
-    "numero": 67,
+    "numero": 126,
     "artista": "Jota.pê",
     "titulo": "Se O Meu Peito Fosse O Mundo",
     "preco": 200,
@@ -738,7 +1387,7 @@
   },
   {
     "id": 23308,
-    "numero": 68,
+    "numero": 127,
     "artista": "Joyce",
     "titulo": "Encontro Marcado",
     "preco": 300,
@@ -748,8 +1397,19 @@
     "observacao": null
   },
   {
+    "id": 20920,
+    "numero": 128,
+    "artista": "Julia Branco",
+    "titulo": "Soltar os Cavalos",
+    "preco": 180,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
     "id": 22709,
-    "numero": 69,
+    "numero": 129,
     "artista": "Júpiter Maçã",
     "titulo": "Uma tarde na fruteira",
     "preco": 400,
@@ -760,7 +1420,7 @@
   },
   {
     "id": 21093,
-    "numero": 70,
+    "numero": 130,
     "artista": "Kacey Musgraves",
     "titulo": "Same Trailer Different Park",
     "preco": 200,
@@ -770,8 +1430,41 @@
     "observacao": null
   },
   {
+    "id": 20895,
+    "numero": 131,
+    "artista": "Karina Buhr",
+    "titulo": "Desmanche",
+    "preco": 250,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
+    "id": 20912,
+    "numero": 132,
+    "artista": "Karina Buhr",
+    "titulo": "Longe de Onde",
+    "preco": 400,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
+    "id": 20910,
+    "numero": 133,
+    "artista": "Kelly Key",
+    "titulo": "Kelly Key",
+    "preco": 400,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
     "id": 21019,
-    "numero": 71,
+    "numero": 134,
     "artista": "Kiko Denucci",
     "titulo": "Na Boca Dos Outros",
     "preco": 200,
@@ -782,7 +1475,7 @@
   },
   {
     "id": 21077,
-    "numero": 72,
+    "numero": 135,
     "artista": "King Princess",
     "titulo": "Cheap Queen",
     "preco": 285,
@@ -793,7 +1486,7 @@
   },
   {
     "id": 21005,
-    "numero": 73,
+    "numero": 136,
     "artista": "Lana Del Rey",
     "titulo": "Violet  Bent Backwards Over The Grass",
     "preco": 300,
@@ -804,7 +1497,7 @@
   },
   {
     "id": 21032,
-    "numero": 74,
+    "numero": 137,
     "artista": "Les McCann & Eddie Harris",
     "titulo": "Swiss Movement",
     "preco": 200,
@@ -814,8 +1507,52 @@
     "observacao": null
   },
   {
+    "id": 20977,
+    "numero": 138,
+    "artista": "Letieres Leite Quinteto",
+    "titulo": "O Enigma Lexeu",
+    "preco": 200,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
+    "id": 20916,
+    "numero": 139,
+    "artista": "Letrux",
+    "titulo": "Letrux como Mulher Girafa",
+    "preco": 180,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
+    "id": 20908,
+    "numero": 140,
+    "artista": "Letrux",
+    "titulo": "Aos Prantos",
+    "preco": 400,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
+    "id": 20989,
+    "numero": 141,
+    "artista": "Letuce",
+    "titulo": "Estilhaça",
+    "preco": 300,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
     "id": 21122,
-    "numero": 75,
+    "numero": 142,
     "artista": "Lily Allen",
     "titulo": "Sheezus",
     "preco": 285,
@@ -826,7 +1563,7 @@
   },
   {
     "id": 21118,
-    "numero": 76,
+    "numero": 143,
     "artista": "Lindsay Lohan",
     "titulo": "A Little More Personal (Raw)",
     "preco": 200,
@@ -836,19 +1573,8 @@
     "observacao": null
   },
   {
-    "id": 21113,
-    "numero": 77,
-    "artista": "Lissie",
-    "titulo": "My Wild West",
-    "preco": 200,
-    "caixa": "Caixa 51",
-    "ano": null,
-    "capa_url": null,
-    "observacao": null
-  },
-  {
     "id": 21105,
-    "numero": 78,
+    "numero": 144,
     "artista": "Lissie",
     "titulo": "Back To Forever",
     "preco": 285,
@@ -859,7 +1585,7 @@
   },
   {
     "id": 21107,
-    "numero": 79,
+    "numero": 145,
     "artista": "Lissie",
     "titulo": "Catching a Tiger",
     "preco": 285,
@@ -870,7 +1596,7 @@
   },
   {
     "id": 21149,
-    "numero": 80,
+    "numero": 146,
     "artista": "Lissie",
     "titulo": "When I'm Alone: The Piano Retrospective",
     "preco": 285,
@@ -880,8 +1606,19 @@
     "observacao": null
   },
   {
+    "id": 21113,
+    "numero": 147,
+    "artista": "Lissie",
+    "titulo": "My Wild West",
+    "preco": 200,
+    "caixa": "Caixa 51",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
     "id": 21140,
-    "numero": 81,
+    "numero": 148,
     "artista": "Lissie",
     "titulo": "Castles",
     "preco": 285,
@@ -892,7 +1629,7 @@
   },
   {
     "id": 21055,
-    "numero": 82,
+    "numero": 149,
     "artista": "Livia Nery",
     "titulo": "Estranha Melodia",
     "preco": 150,
@@ -902,8 +1639,19 @@
     "observacao": null
   },
   {
+    "id": 20947,
+    "numero": 150,
+    "artista": "Lucas Santana",
+    "titulo": "O Céu Já é Velho há Muito Tempo",
+    "preco": 200,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
     "id": 21125,
-    "numero": 83,
+    "numero": 151,
     "artista": "Lucy Rose",
     "titulo": "Something's Changing",
     "preco": 200,
@@ -914,7 +1662,7 @@
   },
   {
     "id": 21131,
-    "numero": 84,
+    "numero": 152,
     "artista": "Lucy Rose",
     "titulo": "Work It Out",
     "preco": 200,
@@ -925,7 +1673,7 @@
   },
   {
     "id": 21004,
-    "numero": 85,
+    "numero": 153,
     "artista": "Mantar",
     "titulo": "Death By Burning",
     "preco": 200,
@@ -936,7 +1684,7 @@
   },
   {
     "id": 23307,
-    "numero": 86,
+    "numero": 154,
     "artista": "Marcos Valle",
     "titulo": "Previsão do Tempo",
     "preco": 250,
@@ -947,7 +1695,7 @@
   },
   {
     "id": 21084,
-    "numero": 87,
+    "numero": 155,
     "artista": "Maren Morris",
     "titulo": "Girl",
     "preco": 200,
@@ -958,7 +1706,7 @@
   },
   {
     "id": 21119,
-    "numero": 88,
+    "numero": 156,
     "artista": "Maren Morris",
     "titulo": "Hero",
     "preco": 200,
@@ -968,8 +1716,30 @@
     "observacao": null
   },
   {
+    "id": 20969,
+    "numero": 157,
+    "artista": "Maria Beraldo",
+    "titulo": "Cavala",
+    "preco": 250,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
+    "id": 20955,
+    "numero": 158,
+    "artista": "Maria Gadú",
+    "titulo": "Guelã",
+    "preco": 500,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
     "id": 21076,
-    "numero": 89,
+    "numero": 159,
     "artista": "Maria Mena",
     "titulo": "White Turns Blue",
     "preco": 300,
@@ -980,7 +1750,7 @@
   },
   {
     "id": 21071,
-    "numero": 90,
+    "numero": 160,
     "artista": "Maria Mena",
     "titulo": "Her Ultimate Collection",
     "preco": 300,
@@ -991,7 +1761,7 @@
   },
   {
     "id": 21028,
-    "numero": 91,
+    "numero": 161,
     "artista": "Maria Mena",
     "titulo": "Apparently Unafected",
     "preco": 300,
@@ -1002,7 +1772,7 @@
   },
   {
     "id": 25127,
-    "numero": 92,
+    "numero": 162,
     "artista": "Marina Sena",
     "titulo": "Coisas Naturais",
     "preco": 500,
@@ -1012,8 +1782,19 @@
     "observacao": null
   },
   {
+    "id": 20949,
+    "numero": 163,
+    "artista": "Matuskela",
+    "titulo": "Matuskela",
+    "preco": 250,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
     "id": 26387,
-    "numero": 93,
+    "numero": 164,
     "artista": "Meirelles E Os Copa 5",
     "titulo": "O Som",
     "preco": 200,
@@ -1023,33 +1804,11 @@
     "observacao": null
   },
   {
-    "id": 21002,
-    "numero": 94,
-    "artista": "Metallica",
-    "titulo": "...And Justice For All",
-    "preco": 385,
-    "caixa": "Caixa 50",
-    "ano": null,
-    "capa_url": null,
-    "observacao": null
-  },
-  {
     "id": 21012,
-    "numero": 95,
+    "numero": 165,
     "artista": "Metallica",
     "titulo": "...And Justice For All",
     "preco": 385,
-    "caixa": "Caixa 50",
-    "ano": null,
-    "capa_url": null,
-    "observacao": null
-  },
-  {
-    "id": 22704,
-    "numero": 96,
-    "artista": "Michael Jackson",
-    "titulo": "Bad",
-    "preco": 295,
     "caixa": "Caixa 50",
     "ano": null,
     "capa_url": null,
@@ -1057,7 +1816,7 @@
   },
   {
     "id": 22702,
-    "numero": 97,
+    "numero": 166,
     "artista": "Michael Jackson",
     "titulo": "Dangerous",
     "preco": 395,
@@ -1067,8 +1826,19 @@
     "observacao": null
   },
   {
+    "id": 22704,
+    "numero": 167,
+    "artista": "Michael Jackson",
+    "titulo": "Bad",
+    "preco": 295,
+    "caixa": "Caixa 50",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
     "id": 21023,
-    "numero": 98,
+    "numero": 168,
     "artista": "Milton Nascimento",
     "titulo": "Travessia",
     "preco": 200,
@@ -1079,7 +1849,7 @@
   },
   {
     "id": 21008,
-    "numero": 99,
+    "numero": 169,
     "artista": "Miranda Lambert",
     "titulo": "Postcards From Texas",
     "preco": 350,
@@ -1090,7 +1860,7 @@
   },
   {
     "id": 21063,
-    "numero": 100,
+    "numero": 170,
     "artista": "Miranda Lambert",
     "titulo": "Platinum",
     "preco": 285,
@@ -1101,7 +1871,7 @@
   },
   {
     "id": 26810,
-    "numero": 101,
+    "numero": 171,
     "artista": "Misfits",
     "titulo": "American Psycho",
     "preco": 295,
@@ -1112,7 +1882,7 @@
   },
   {
     "id": 26809,
-    "numero": 102,
+    "numero": 172,
     "artista": "Misfits",
     "titulo": "Walk Among Us",
     "preco": 285,
@@ -1122,8 +1892,19 @@
     "observacao": null
   },
   {
+    "id": 20893,
+    "numero": 173,
+    "artista": "Moacir Santos",
+    "titulo": "Coisas",
+    "preco": 285,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
     "id": 21003,
-    "numero": 103,
+    "numero": 174,
     "artista": "Moby",
     "titulo": "Innocents",
     "preco": 400,
@@ -1133,8 +1914,30 @@
     "observacao": null
   },
   {
+    "id": 24679,
+    "numero": 175,
+    "artista": "Moraes Moreira",
+    "titulo": "Moraes Moreira",
+    "preco": 250,
+    "caixa": "Caixa 49",
+    "ano": "1975",
+    "capa_url": null,
+    "observacao": null
+  },
+  {
+    "id": 20931,
+    "numero": 176,
+    "artista": "Nara Leão",
+    "titulo": "Opinião de Nara",
+    "preco": 200,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
     "id": 21067,
-    "numero": 104,
+    "numero": 177,
     "artista": "Natalie Imbruglia",
     "titulo": "Male",
     "preco": 285,
@@ -1145,7 +1948,7 @@
   },
   {
     "id": 21017,
-    "numero": 105,
+    "numero": 178,
     "artista": "Nataneal Cano",
     "titulo": "Porque La Demora",
     "preco": 395,
@@ -1156,7 +1959,7 @@
   },
   {
     "id": 21932,
-    "numero": 106,
+    "numero": 179,
     "artista": "Ney Matogrosso",
     "titulo": "Bandido",
     "preco": 220,
@@ -1166,8 +1969,19 @@
     "observacao": null
   },
   {
+    "id": 20897,
+    "numero": 180,
+    "artista": "Ney Matogrosso",
+    "titulo": "Bandido",
+    "preco": 220,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
     "id": 21935,
-    "numero": 107,
+    "numero": 181,
     "artista": "Nick Cave and The Bad Seeds",
     "titulo": "The boatman's call",
     "preco": 295,
@@ -1178,7 +1992,7 @@
   },
   {
     "id": 21029,
-    "numero": 108,
+    "numero": 182,
     "artista": "Nicki Minaj",
     "titulo": "Pink Friday Roman Reloaded",
     "preco": 200,
@@ -1189,7 +2003,7 @@
   },
   {
     "id": 21098,
-    "numero": 109,
+    "numero": 183,
     "artista": "Norah Jones",
     "titulo": "Begin Again",
     "preco": 200,
@@ -1200,7 +2014,7 @@
   },
   {
     "id": 21100,
-    "numero": 110,
+    "numero": 184,
     "artista": "Norah Jones",
     "titulo": "Daybreaks",
     "preco": 280,
@@ -1211,7 +2025,7 @@
   },
   {
     "id": 21097,
-    "numero": 111,
+    "numero": 185,
     "artista": "Norah Jones",
     "titulo": "...Little Broken Hearts",
     "preco": 385,
@@ -1221,8 +2035,19 @@
     "observacao": null
   },
   {
-    "id": 21010,
-    "numero": 112,
+    "id": 20921,
+    "numero": 186,
+    "artista": "Novíssimo Edgar",
+    "titulo": "Ultraleve",
+    "preco": 150,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
+    "id": 21011,
+    "numero": 187,
     "artista": "Ozzy Osbourne",
     "titulo": "Diary of a Deadman",
     "preco": 295,
@@ -1232,8 +2057,8 @@
     "observacao": null
   },
   {
-    "id": 21011,
-    "numero": 113,
+    "id": 21010,
+    "numero": 188,
     "artista": "Ozzy Osbourne",
     "titulo": "Diary of a Deadman",
     "preco": 295,
@@ -1244,7 +2069,7 @@
   },
   {
     "id": 21123,
-    "numero": 114,
+    "numero": 189,
     "artista": "Pearl Jam",
     "titulo": "Backspacer",
     "preco": 380,
@@ -1254,8 +2079,41 @@
     "observacao": null
   },
   {
+    "id": 20932,
+    "numero": 190,
+    "artista": "Pedra de Selva",
+    "titulo": "Curumin",
+    "preco": 250,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
+    "id": 20994,
+    "numero": 191,
+    "artista": "Perotá Chingó",
+    "titulo": "Muta",
+    "preco": 150,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
+    "id": 20993,
+    "numero": 192,
+    "artista": "Perotá Chingó",
+    "titulo": "Muta",
+    "preco": 150,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
     "id": 21052,
-    "numero": 115,
+    "numero": 193,
     "artista": "Pet Sjop Boys",
     "titulo": "Yes",
     "preco": 270,
@@ -1266,7 +2124,7 @@
   },
   {
     "id": 21143,
-    "numero": 116,
+    "numero": 194,
     "artista": "Pink Martini",
     "titulo": "Je Dis Oui!",
     "preco": 350,
@@ -1277,7 +2135,7 @@
   },
   {
     "id": 23306,
-    "numero": 117,
+    "numero": 195,
     "artista": "Quarteto em Cy",
     "titulo": "Quarteto em Cy",
     "preco": 300,
@@ -1288,7 +2146,7 @@
   },
   {
     "id": 21054,
-    "numero": 118,
+    "numero": 196,
     "artista": "R.E.M.",
     "titulo": "Fables of the Reconstruction",
     "preco": 200,
@@ -1298,19 +2156,19 @@
     "observacao": null
   },
   {
-    "id": 21022,
-    "numero": 119,
-    "artista": "Ricardo Bacelar",
-    "titulo": "Concerto para Moviola",
-    "preco": 100,
-    "caixa": "Caixa 50",
+    "id": 20902,
+    "numero": 197,
+    "artista": "Rashid",
+    "titulo": "Portal",
+    "preco": 120,
+    "caixa": "Caixa 49",
     "ano": null,
     "capa_url": null,
     "observacao": null
   },
   {
     "id": 23312,
-    "numero": 120,
+    "numero": 198,
     "artista": "Ricardo Bacelar",
     "titulo": "Concerto para moviola ao vivo",
     "preco": 100,
@@ -1321,7 +2179,7 @@
   },
   {
     "id": 23311,
-    "numero": 121,
+    "numero": 199,
     "artista": "Ricardo Bacelar",
     "titulo": "Sebastiana",
     "preco": 100,
@@ -1331,8 +2189,19 @@
     "observacao": null
   },
   {
+    "id": 21022,
+    "numero": 200,
+    "artista": "Ricardo Bacelar",
+    "titulo": "Concerto para Moviola",
+    "preco": 100,
+    "caixa": "Caixa 50",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
     "id": 21124,
-    "numero": 122,
+    "numero": 201,
     "artista": "Ricardo Margadona & Rebecca Riss",
     "titulo": "Delirium",
     "preco": 150,
@@ -1342,8 +2211,52 @@
     "observacao": null
   },
   {
+    "id": 20992,
+    "numero": 202,
+    "artista": "Rico Dalasam",
+    "titulo": "Dolores Dala Guardião do Alívio",
+    "preco": 180,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
+    "id": 20909,
+    "numero": 203,
+    "artista": "Rita Lee",
+    "titulo": "Santa Rita de Sampa",
+    "preco": 295,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
+    "id": 20929,
+    "numero": 204,
+    "artista": "Roberta Campos",
+    "titulo": "Varrendo a Lua",
+    "preco": 500,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
+    "id": 20948,
+    "numero": 205,
+    "artista": "Robson Jorge",
+    "titulo": "The Mauro Motta Sessions (1985-1992)",
+    "preco": 250,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
     "id": 21155,
-    "numero": 123,
+    "numero": 206,
     "artista": "Rod Stewart",
     "titulo": "Foolish Behaviour",
     "preco": 150,
@@ -1353,8 +2266,30 @@
     "observacao": null
   },
   {
+    "id": 20984,
+    "numero": 207,
+    "artista": "Rodrigo Campos, Juçara Marçal, Gui Amadis",
+    "titulo": "Sambas do Absurdo Vol. 2",
+    "preco": 200,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
+    "id": 20979,
+    "numero": 208,
+    "artista": "Rubel",
+    "titulo": "Casas",
+    "preco": 400,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
     "id": 22826,
-    "numero": 124,
+    "numero": 209,
     "artista": "Rupert Gregson-Williams",
     "titulo": "Wonder Woman (Original Motion Picture Soundtrack)",
     "preco": 400,
@@ -1365,7 +2300,7 @@
   },
   {
     "id": 21042,
-    "numero": 125,
+    "numero": 210,
     "artista": "Sam Smith",
     "titulo": "In The Lonely Hour",
     "preco": 220,
@@ -1375,41 +2310,52 @@
     "observacao": null
   },
   {
-    "id": 21099,
-    "numero": 126,
-    "artista": "Sara Bareilles",
-    "titulo": "More Love (Songs From Little Voice Season One)",
-    "preco": 220,
-    "caixa": "Caixa 51",
+    "id": 20906,
+    "numero": 211,
+    "artista": "Sandra Sá",
+    "titulo": "Vale Tudo",
+    "preco": 200,
+    "caixa": "Caixa 49",
     "ano": null,
     "capa_url": null,
     "observacao": null
   },
   {
-    "id": 21069,
-    "numero": 127,
-    "artista": "Sara Bareilles",
-    "titulo": "Little Voice",
-    "preco": 280,
-    "caixa": "Caixa 51",
+    "id": 20962,
+    "numero": 212,
+    "artista": "Sandy & Junior",
+    "titulo": "Identidade",
+    "preco": 450,
+    "caixa": "Caixa 49",
     "ano": null,
     "capa_url": null,
     "observacao": null
   },
   {
-    "id": 21111,
-    "numero": 128,
-    "artista": "Sara Bareilles",
-    "titulo": "The Blessed Unrest",
-    "preco": 385,
-    "caixa": "Caixa 51",
-    "ano": null,
+    "id": 20967,
+    "numero": 213,
+    "artista": "Sandy & Junior",
+    "titulo": "Sandy & Junior",
+    "preco": 450,
+    "caixa": "Caixa 49",
+    "ano": "2001",
+    "capa_url": null,
+    "observacao": null
+  },
+  {
+    "id": 20966,
+    "numero": 214,
+    "artista": "Sandy & Junior",
+    "titulo": "Sandy & Junior",
+    "preco": 300,
+    "caixa": "Caixa 49",
+    "ano": "2006",
     "capa_url": null,
     "observacao": null
   },
   {
     "id": 21072,
-    "numero": 129,
+    "numero": 215,
     "artista": "Sara Bareilles",
     "titulo": "Kaleidoscope Heart",
     "preco": 385,
@@ -1419,11 +2365,33 @@
     "observacao": null
   },
   {
-    "id": 21079,
-    "numero": 130,
+    "id": 21069,
+    "numero": 216,
     "artista": "Sara Bareilles",
-    "titulo": "Amidst The Chaos",
-    "preco": 395,
+    "titulo": "Little Voice",
+    "preco": 280,
+    "caixa": "Caixa 51",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
+    "id": 21099,
+    "numero": 217,
+    "artista": "Sara Bareilles",
+    "titulo": "More Love (Songs From Little Voice Season One)",
+    "preco": 220,
+    "caixa": "Caixa 51",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
+    "id": 21111,
+    "numero": 218,
+    "artista": "Sara Bareilles",
+    "titulo": "The Blessed Unrest",
+    "preco": 385,
     "caixa": "Caixa 51",
     "ano": null,
     "capa_url": null,
@@ -1431,7 +2399,7 @@
   },
   {
     "id": 21025,
-    "numero": 131,
+    "numero": 219,
     "artista": "Sara Bareilles",
     "titulo": "Amidst The Chaos - Live From The Holl",
     "preco": 385,
@@ -1441,8 +2409,19 @@
     "observacao": null
   },
   {
+    "id": 21079,
+    "numero": 220,
+    "artista": "Sara Bareilles",
+    "titulo": "Amidst The Chaos",
+    "preco": 395,
+    "caixa": "Caixa 51",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
     "id": 21014,
-    "numero": 132,
+    "numero": 221,
     "artista": "Saxon",
     "titulo": "Call To Arms",
     "preco": 285,
@@ -1453,7 +2432,7 @@
   },
   {
     "id": 21083,
-    "numero": 133,
+    "numero": 222,
     "artista": "Scarlett Johansson",
     "titulo": "Anywhere I Lay My Head",
     "preco": 285,
@@ -1464,7 +2443,7 @@
   },
   {
     "id": 21066,
-    "numero": 134,
+    "numero": 223,
     "artista": "Selena Gomez",
     "titulo": "Rare",
     "preco": 280,
@@ -1474,19 +2453,8 @@
     "observacao": null
   },
   {
-    "id": 21126,
-    "numero": 135,
-    "artista": "Sevdaliza",
-    "titulo": "The Calling",
-    "preco": 200,
-    "caixa": "Caixa 51",
-    "ano": null,
-    "capa_url": null,
-    "observacao": null
-  },
-  {
     "id": 21089,
-    "numero": 136,
+    "numero": 224,
     "artista": "Sevdaliza",
     "titulo": "Shabrang",
     "preco": 400,
@@ -1496,8 +2464,19 @@
     "observacao": null
   },
   {
+    "id": 21126,
+    "numero": 225,
+    "artista": "Sevdaliza",
+    "titulo": "The Calling",
+    "preco": 200,
+    "caixa": "Caixa 51",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
     "id": 21127,
-    "numero": 137,
+    "numero": 226,
     "artista": "Sevdaliza",
     "titulo": "The Suspended Kid",
     "preco": 200,
@@ -1508,7 +2487,7 @@
   },
   {
     "id": 21146,
-    "numero": 138,
+    "numero": 227,
     "artista": "Sevdaliza",
     "titulo": "Children of Silk",
     "preco": 285,
@@ -1519,7 +2498,7 @@
   },
   {
     "id": 21090,
-    "numero": 139,
+    "numero": 228,
     "artista": "Shakira",
     "titulo": "She Wolf",
     "preco": 385,
@@ -1529,19 +2508,8 @@
     "observacao": null
   },
   {
-    "id": 21095,
-    "numero": 140,
-    "artista": "Shawn Mendes",
-    "titulo": "Handwritten",
-    "preco": 295,
-    "caixa": "Caixa 51",
-    "ano": null,
-    "capa_url": null,
-    "observacao": null
-  },
-  {
     "id": 21104,
-    "numero": 141,
+    "numero": 229,
     "artista": "Shawn Mendes",
     "titulo": "Shawn Mendes",
     "preco": 295,
@@ -1552,7 +2520,7 @@
   },
   {
     "id": 21103,
-    "numero": 142,
+    "numero": 230,
     "artista": "Shawn Mendes",
     "titulo": "MTV Unplugged",
     "preco": 400,
@@ -1563,7 +2531,7 @@
   },
   {
     "id": 21041,
-    "numero": 143,
+    "numero": 231,
     "artista": "Shawn Mendes",
     "titulo": "Illuminate",
     "preco": 285,
@@ -1574,7 +2542,7 @@
   },
   {
     "id": 21091,
-    "numero": 144,
+    "numero": 232,
     "artista": "Shawn Mendes",
     "titulo": "Wonder",
     "preco": 300,
@@ -1584,8 +2552,19 @@
     "observacao": null
   },
   {
+    "id": 21095,
+    "numero": 233,
+    "artista": "Shawn Mendes",
+    "titulo": "Handwritten",
+    "preco": 295,
+    "caixa": "Caixa 51",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
     "id": 21153,
-    "numero": 145,
+    "numero": 234,
     "artista": "Silvia Machete",
     "titulo": "Invisible Woman",
     "preco": 200,
@@ -1596,7 +2575,7 @@
   },
   {
     "id": 21074,
-    "numero": 146,
+    "numero": 235,
     "artista": "Silvia Machete",
     "titulo": "Rhonda",
     "preco": 300,
@@ -1606,19 +2585,8 @@
     "observacao": null
   },
   {
-    "id": 21157,
-    "numero": 147,
-    "artista": "Soap&Skin",
-    "titulo": "Lovetune for Vacuum",
-    "preco": 200,
-    "caixa": "Caixa 51",
-    "ano": null,
-    "capa_url": null,
-    "observacao": null
-  },
-  {
     "id": 21116,
-    "numero": 148,
+    "numero": 236,
     "artista": "Soap&Skin",
     "titulo": "From Gas To Solid / You Are My Friend",
     "preco": 385,
@@ -1629,7 +2597,7 @@
   },
   {
     "id": 21130,
-    "numero": 149,
+    "numero": 237,
     "artista": "Soap&Skin",
     "titulo": "Narrow",
     "preco": 200,
@@ -1639,19 +2607,30 @@
     "observacao": null
   },
   {
-    "id": 21142,
-    "numero": 150,
-    "artista": "Soley",
-    "titulo": "We Sink",
-    "preco": 385,
+    "id": 21157,
+    "numero": 238,
+    "artista": "Soap&Skin",
+    "titulo": "Lovetune for Vacuum",
+    "preco": 200,
     "caixa": "Caixa 51",
     "ano": null,
     "capa_url": null,
     "observacao": null
   },
   {
+    "id": 20954,
+    "numero": 239,
+    "artista": "Solange Borges",
+    "titulo": "Bom dia Universo",
+    "preco": 200,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
     "id": 21141,
-    "numero": 151,
+    "numero": 240,
     "artista": "Soley",
     "titulo": "Endless Summer",
     "preco": 285,
@@ -1662,7 +2641,7 @@
   },
   {
     "id": 21036,
-    "numero": 152,
+    "numero": 241,
     "artista": "Soley",
     "titulo": "Ask The Deep",
     "preco": 280,
@@ -1672,8 +2651,19 @@
     "observacao": null
   },
   {
+    "id": 21142,
+    "numero": 242,
+    "artista": "Soley",
+    "titulo": "We Sink",
+    "preco": 385,
+    "caixa": "Caixa 51",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
     "id": 21085,
-    "numero": 153,
+    "numero": 243,
     "artista": "Stéphane Pompougnac",
     "titulo": "Hôtel Costes, Vol. 2: La suite",
     "preco": 180,
@@ -1684,7 +2674,7 @@
   },
   {
     "id": 21135,
-    "numero": 154,
+    "numero": 244,
     "artista": "Suede",
     "titulo": "Coming Up",
     "preco": 250,
@@ -1695,7 +2685,7 @@
   },
   {
     "id": 21101,
-    "numero": 155,
+    "numero": 245,
     "artista": "t.A.T.u",
     "titulo": "Dangerous and Moving",
     "preco": 285,
@@ -1705,8 +2695,19 @@
     "observacao": null
   },
   {
+    "id": 20974,
+    "numero": 246,
+    "artista": "Tamba Trio",
+    "titulo": "Tamba Trio",
+    "preco": 230,
+    "caixa": "Caixa 49",
+    "ano": "1968",
+    "capa_url": null,
+    "observacao": null
+  },
+  {
     "id": 21154,
-    "numero": 156,
+    "numero": 247,
     "artista": "Tamba Trio",
     "titulo": "Tamba Trio",
     "preco": 250,
@@ -1717,7 +2718,7 @@
   },
   {
     "id": 21114,
-    "numero": 157,
+    "numero": 248,
     "artista": "Tarja",
     "titulo": "Act I",
     "preco": 400,
@@ -1727,8 +2728,19 @@
     "observacao": null
   },
   {
+    "id": 20978,
+    "numero": 249,
+    "artista": "Tássia Reis",
+    "titulo": "Próspera",
+    "preco": 350,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
     "id": 22701,
-    "numero": 158,
+    "numero": 250,
     "artista": "Taylor Swift",
     "titulo": "The life of a showgirl",
     "preco": 395,
@@ -1739,7 +2751,7 @@
   },
   {
     "id": 21034,
-    "numero": 159,
+    "numero": 251,
     "artista": "The Cigarretes",
     "titulo": "Bingo",
     "preco": 140,
@@ -1750,7 +2762,7 @@
   },
   {
     "id": 24680,
-    "numero": 160,
+    "numero": 252,
     "artista": "The Doors",
     "titulo": "Waiting For The Sun",
     "preco": 295,
@@ -1761,7 +2773,7 @@
   },
   {
     "id": 21031,
-    "numero": 161,
+    "numero": 253,
     "artista": "The Murder Capital",
     "titulo": "Blindness",
     "preco": 280,
@@ -1772,7 +2784,7 @@
   },
   {
     "id": 21058,
-    "numero": 162,
+    "numero": 254,
     "artista": "The Pretty Reckless",
     "titulo": "Who You Selling For",
     "preco": 385,
@@ -1783,7 +2795,7 @@
   },
   {
     "id": 21070,
-    "numero": 163,
+    "numero": 255,
     "artista": "The Pretty Reckless",
     "titulo": "Death By Rock And Roll",
     "preco": 385,
@@ -1794,7 +2806,7 @@
   },
   {
     "id": 21044,
-    "numero": 164,
+    "numero": 256,
     "artista": "The Veronicas",
     "titulo": "The Secret Life Of",
     "preco": 400,
@@ -1805,7 +2817,7 @@
   },
   {
     "id": 21049,
-    "numero": 165,
+    "numero": 257,
     "artista": "The Veronicas",
     "titulo": "Hook Me Up",
     "preco": 400,
@@ -1816,7 +2828,7 @@
   },
   {
     "id": 23222,
-    "numero": 166,
+    "numero": 258,
     "artista": "Thelonious Monk",
     "titulo": "Monk's Music",
     "preco": 285,
@@ -1826,8 +2838,19 @@
     "observacao": null
   },
   {
+    "id": 20900,
+    "numero": 259,
+    "artista": "Tiê",
+    "titulo": "Esmeraldas",
+    "preco": 250,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
     "id": 21117,
-    "numero": 167,
+    "numero": 260,
     "artista": "Tim Buckley",
     "titulo": "Tim Buckley",
     "preco": 200,
@@ -1838,7 +2861,7 @@
   },
   {
     "id": 24363,
-    "numero": 168,
+    "numero": 261,
     "artista": "Tim Maia",
     "titulo": "Racional Vol. 2",
     "preco": 350,
@@ -1849,7 +2872,7 @@
   },
   {
     "id": 23422,
-    "numero": 169,
+    "numero": 262,
     "artista": "Tom Zé",
     "titulo": "Urgência Didática",
     "preco": 250,
@@ -1859,8 +2882,41 @@
     "observacao": null
   },
   {
+    "id": 20890,
+    "numero": 263,
+    "artista": "Tribalistas",
+    "titulo": "Tribalistas",
+    "preco": 285,
+    "caixa": "Caixa 49",
+    "ano": "2017",
+    "capa_url": null,
+    "observacao": null
+  },
+  {
+    "id": 20986,
+    "numero": 264,
+    "artista": "Tulipa Ruiz",
+    "titulo": "Efêmera",
+    "preco": 350,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
+    "id": 20892,
+    "numero": 265,
+    "artista": "Tulipa Ruiz",
+    "titulo": "Dancê",
+    "preco": 450,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
     "id": 21106,
-    "numero": 170,
+    "numero": 266,
     "artista": "Vanessa Carlton",
     "titulo": "Double Live and Covers",
     "preco": 450,
@@ -1871,7 +2927,7 @@
   },
   {
     "id": 21121,
-    "numero": 171,
+    "numero": 267,
     "artista": "Vanessa Carlton",
     "titulo": "Love is An Art",
     "preco": 200,
@@ -1882,7 +2938,7 @@
   },
   {
     "id": 26385,
-    "numero": 172,
+    "numero": 268,
     "artista": "Vanguart",
     "titulo": "Boa Parte De Mim Vai Embora",
     "preco": 200,
@@ -1893,7 +2949,7 @@
   },
   {
     "id": 21056,
-    "numero": 173,
+    "numero": 269,
     "artista": "Various",
     "titulo": "4Ever Os Beatles Por Seus Amigos Vol. 2",
     "preco": 185,
@@ -1904,7 +2960,7 @@
   },
   {
     "id": 21057,
-    "numero": 174,
+    "numero": 270,
     "artista": "Various",
     "titulo": "Killing Eve Season Two (Original Series Soundtrack)",
     "preco": 380,
@@ -1914,8 +2970,19 @@
     "observacao": null
   },
   {
+    "id": 20985,
+    "numero": 271,
+    "artista": "Vinicius de Moraes",
+    "titulo": "Vinicius e Odete Lara",
+    "preco": 250,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
     "id": 21158,
-    "numero": 175,
+    "numero": 272,
     "artista": "Violent Femmes",
     "titulo": "Why Do Birds Sing?",
     "preco": 150,
@@ -1926,7 +2993,7 @@
   },
   {
     "id": 21152,
-    "numero": 176,
+    "numero": 273,
     "artista": "Whitney Houston",
     "titulo": "Whitney",
     "preco": 250,
@@ -1937,7 +3004,7 @@
   },
   {
     "id": 21033,
-    "numero": 177,
+    "numero": 274,
     "artista": "Wilco",
     "titulo": "A Ghost Is Born",
     "preco": 300,
@@ -1948,7 +3015,7 @@
   },
   {
     "id": 21148,
-    "numero": 178,
+    "numero": 275,
     "artista": "Wojczech",
     "titulo": "Grinding the Ruins",
     "preco": 150,
@@ -1958,8 +3025,30 @@
     "observacao": null
   },
   {
+    "id": 20975,
+    "numero": 276,
+    "artista": "Xenia França",
+    "titulo": "Xenia",
+    "preco": 350,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
+    "id": 20983,
+    "numero": 277,
+    "artista": "Xuxa",
+    "titulo": "Só faltava você",
+    "preco": 400,
+    "caixa": "Caixa 49",
+    "ano": null,
+    "capa_url": null,
+    "observacao": null
+  },
+  {
     "id": 21053,
-    "numero": 179,
+    "numero": 278,
     "artista": "Y&T",
     "titulo": "Down For The Count",
     "preco": 250,
@@ -1969,8 +3058,8 @@
     "observacao": null
   },
   {
-    "id": 21064,
-    "numero": 180,
+    "id": 21065,
+    "numero": 279,
     "artista": "ZAZ",
     "titulo": "Effet miroir",
     "preco": 385,
@@ -1980,8 +3069,8 @@
     "observacao": null
   },
   {
-    "id": 21065,
-    "numero": 181,
+    "id": 21064,
+    "numero": 280,
     "artista": "ZAZ",
     "titulo": "Effet miroir",
     "preco": 385,
@@ -1992,7 +3081,7 @@
   },
   {
     "id": 22707,
-    "numero": 182,
+    "numero": 281,
     "artista": "Zé Ibarra",
     "titulo": "Afim",
     "preco": 250,
@@ -2003,12 +3092,23 @@
   },
   {
     "id": 24261,
-    "numero": 183,
+    "numero": 282,
     "artista": "Zeca Baleiro",
     "titulo": "Por Onde Andará Stephen Fry?",
     "preco": 270,
     "caixa": "Caixa 50",
     "ano": "1997",
+    "capa_url": null,
+    "observacao": null
+  },
+  {
+    "id": 20939,
+    "numero": 283,
+    "artista": "Zeca Baleiro",
+    "titulo": "O Disco do Ano",
+    "preco": 270,
+    "caixa": "Caixa 49",
+    "ano": null,
     "capa_url": null,
     "observacao": null
   }

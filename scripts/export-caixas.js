@@ -42,9 +42,9 @@ async function fetchDiscogsCover(artista, titulo) {
 }
 
 async function main() {
-  console.log('📦 Conectando ao Supabase para buscar discos das Caixas 50 e 51...');
+  console.log('📦 Conectando ao Supabase para buscar discos das Caixas 49, 50 e 51...');
   
-  const queryUrl = `${SUPABASE_URL}/rest/v1/discos?select=id,artista,titulo,preco,caixa,ano,observacao&caixa=in.(50,51,Caixa%2050,Caixa%2051)&deletado=eq.false&order=artista.asc`;
+  const queryUrl = `${SUPABASE_URL}/rest/v1/discos?select=id,artista,titulo,preco,caixa,ano,observacao&caixa=in.(49,50,51,Caixa%2049,Caixa%2050,Caixa%2051)&deletado=eq.false&order=artista.asc`;
   
   const response = await fetch(queryUrl, {
     headers: {
