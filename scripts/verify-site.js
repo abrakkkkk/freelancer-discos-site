@@ -108,7 +108,7 @@ async function runTests() {
 
   // Preenche dados do cliente
   await page.fill('#customerName', 'Lucas Vinil');
-  await page.fill('#customerCity', 'Pinheiros, São Paulo');
+  await page.fill('#customerCity', 'Meireles, Fortaleza - CE');
 
   const cartShot = path.join(SCREENSHOT_DIR, 'desktop_cart_drawer.png');
   await page.screenshot({ path: cartShot });
