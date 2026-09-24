@@ -186,7 +186,7 @@ document.addEventListener('DOMContentLoaded', () => {
         coverMap = { ...coverMap, ...clientCoverCache };
       } catch (_) {}
 
-      // 2. Consulta ao vivo o Supabase
+      // 2. Consulta ao vivo o Supabase (com suporte a capa_url em tempo real)
       const cfg = window.STORE_CONFIG || {};
       const supabaseUrl = cfg.supabaseUrl;
       const anonKey = cfg.supabaseAnonKey;
@@ -194,14 +194,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (supabaseUrl && anonKey) {
         try {
-          const queryUrl = `${supabaseUrl}/rest/v1/discos?select=id,artista,titulo,preco,caixa,ano,observacao,ativo,deletado&caixa=in.(49,50,51,Caixa%2049,Caixa%2050,Caixa%2051)&deletado=eq.false&ativo=eq.true&order=artista.asc`;
-          const res = await fetch(queryUrl, {
+          // Tenta consultar incluindo capa_url ao vivo
+          let queryUrl = `${supabaseUrl}/rest/v1/discos?select=id,artista,titulo,preco,caixa,ano,observacao,ativo,deletado,capa_url&caixa=in.(49,50,51,Caixa%2049,Caixa%2050,Caixa%2051)&deletado=eq.false&ativo=eq.true&order=artista.asc`;
+          let res = await fetch(queryUrl, {
             headers: {
               apikey: anonKey,
               Authorization: `Bearer ${anonKey}`,
               'Accept-Profile': 'public'
             }
           });
+
+          // Se a coluna capa_url ainda não foi criada no Supabase, consulta sem ela
+          if (!res.ok) {
+            queryUrl = `${supabaseUrl}/rest/v1/discos?select=id,artista,titulo,preco,caixa,ano,observacao,ativo,deletado&caixa=in.(49,50,51,Caixa%2049,Caixa%2050,Caixa%2051)&deletado=eq.false&ativo=eq.true&order=artista.asc`;
+            res = await fetch(queryUrl, {
+              headers: {
+                apikey: anonKey,
+                Authorization: `Bearer ${anonKey}`,
+                'Accept-Profile': 'public'
+              }
+            });
+          }
 
           if (res.ok) {
             liveRecords = await res.json();
@@ -211,11 +224,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
 
-      // 3. Monta o catálogo
+      // 3. Monta o catálogo (dando prioridade à capa_url em tempo real)
       if (liveRecords && liveRecords.length > 0) {
         allRecords = liveRecords.map((item, idx) => {
           const qKey = `${item.artista || ''}_${item.titulo || ''}`.toLowerCase();
-          const capa = coverMap[item.id] || coverMap[qKey] || null;
+          const capa = item.capa_url || coverMap[item.id] || coverMap[qKey] || null;
 
           return {
             id: item.id,
