@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Freelancer Discos — Cada Disco, Uma História | Novidades em Vinil</title>
+  <meta name="description" content="Descubra novidades e raridades em vinil na Freelancer Discos. Conheça nossa história, explore o catálogo das Caixas 50 e 51 e compre direto pelo WhatsApp.">
+  
+  <!-- Favicon / Meta Tema -->
+  <meta name="theme-color" content="#0a0a0a">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <!-- Fontes Editoriais Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+  <!-- Design Tokens e Estilos -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Topbar Editorial Metadados -->
+  <header class="topbar">
+    <div class="meta-container">
+      <span class="meta-item meta-edition">Edição Nº 51</span>
+      <span class="meta-item meta-tagline">Vinil · Raridades · Novidades</span>
+      <span class="meta-item meta-location">São Paulo, Brasil</span>
+    </div>
+  </header>
+
+  <!-- Navegação Principal -->
+  <nav class="main-nav" id="mainNav">
+    <div class="nav-container">
+      <!-- Menu Esquerdo (Desktop) -->
+      <ul class="nav-links nav-left">
+        <li><a href="#inicio" class="nav-link active">Início</a></li>
+        <li><a href="#sobre" class="nav-link">Quem Somos</a></li>
+      </ul>
+
+      <!-- Logotipo Central -->
+      <a href="#inicio" class="nav-brand" aria-label="Freelancer Discos - Início">
+        <img src="assets/logo.png" alt="Freelancer Discos" class="brand-logo" width="180" height="48">
+      </a>
+
+      <!-- Menu Direito & Botão da Sacola -->
+      <div class="nav-right-wrap">
+        <ul class="nav-links nav-right">
+          <li><a href="#catalogo" class="nav-link">Catálogo</a></li>
+          <li><a href="#contato" class="nav-link">Contato</a></li>
+        </ul>
+
+        <!-- Botão Sacola de Compras -->
+        <button class="cart-trigger-btn" id="cartTrigger" aria-label="Abrir Sacola de Compras">
+          <svg class="cart-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="cart-label">Sacola</span>
+          <span class="cart-badge" id="cartBadge">0</span>
+        </button>
+
+        <!-- Menu Hamburguer Mobile -->
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu de navegação">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Gaveta de Links Mobile -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#inicio" class="mobile-link">Início</a>
+      <a href="#sobre" class="mobile-link">Quem Somos</a>
+      <a href="#catalogo" class="mobile-link">Catálogo (Novidades)</a>
+      <a href="#contato" class="mobile-link">Contato & Localização</a>
+    </div>
+  </nav>
+
+  <!-- Seção Hero Principal -->
+  <section class="hero-section" id="inicio">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <span class="hero-kicker">CAPA · A SELEÇÃO DA SEMANA</span>
+        <h1 class="hero-title">Cada Disco,<br><em>Uma</em> História</h1>
+        <p class="hero-lede">Descubra raridades e novidades em vinil de alta prensagem, selecionadas a dedo para a sua coleção.</p>
+        <div class="hero-actions">
+          <a href="#catalogo" class="btn btn-primary">Explorar Catálogo →</a>
+          <a href="#sobre" class="btn btn-outline">Conheça a Loja</a>
+        </div>
+      </div>
+
+      <!-- Disco de Vinil Gráfico Interativo -->
+      <div class="hero-vinyl-wrap" aria-hidden="true">
+        <div class="vinyl-disc" id="vinylDisc">
+          <div class="vinyl-reflection"></div>
+          <div class="vinyl-label">
+            <span class="label-side">Lado A</span>
+            <span class="label-brand">Freelancer</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção 01: Quem Somos -->
+  <section class="section-container" id="sobre">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <span class="section-tag">Quem Somos</span>
+      <span class="section-extra">Perfil da Casa</span>
+    </div>
+
+    <div class="about-grid">
+      <!-- Estante Generativa Viva -->
+      <figure class="about-visual">
+        <div class="shelf-wrapper" id="shelf"></div>
+        <figcaption class="shelf-caption">Fig. 1 — O acervo, da parede ao chão. Ilustração generativa.</figcaption>
+      </figure>
+
+      <!-- Conteúdo Editorial -->
+      <div class="about-content">
+        <h2 class="editorial-heading">Sobre <em>Nós</em></h2>
+        <p class="about-lead">A Freelancer Discos nasceu da paixão visceral por discos de vinil e pela música que atravessa gerações. Cada exemplar do nosso acervo passa por uma rigorosa curadoria fonográfica.</p>
+        
+        <blockquote class="about-quote">
+          “Cada disco carrega uma história, e a nossa missão é encontrar o próximo dono dela.”
+        </blockquote>
+        
+        <p>Trabalhamos com raridades de época, primeiras prensagens nacionais e importadas, compactos, edições de luxo e coleções inteiras, sempre com o máximo rigor na conservação e avaliação do áudio.</p>
+        <p>Aqui, colecionadores veteranos e novos apreciadores do vinil encontram o álbum certo e uma conversa sobre música de verdade.</p>
+        
+        <a href="#catalogo" class="more-link">Ver os discos que acabaram de chegar →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção 02: Catálogo (Novidades - Caixas 50 e 51) -->
+  <section class="section-container" id="catalogo">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <span class="section-tag">Catálogo</span>
+      <span class="section-extra">Recém-Chegados</span>
+    </div>
+
+    <div class="catalog-intro">
+      <h2 class="editorial-heading">Novidades</h2>
+      <p class="catalog-subtitle">Caixas 50 e 51 — Discos novos que chegaram esta semana ao acervo</p>
+    </div>
+
+    <!-- Barra de Ferramentas: Busca + Filtros -->
+    <div class="catalog-toolbar">
+      <!-- Campo de Busca -->
+      <div class="search-input-wrap">
+        <svg class="search-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="search" id="searchInput" class="search-input" placeholder="Buscar por artista ou título do disco..." autocomplete="off">
+        <button type="button" id="searchClear" class="search-clear-btn" aria-label="Limpar busca" style="display: none;">&times;</button>
+      </div>
+
+      <!-- Filtro por Caixa -->
+      <div class="filter-pills" id="filterPills" role="tablist">
+        <button class="pill-btn active" data-filter="all" role="tab" aria-selected="true">Todos os Discos</button>
+        <button class="pill-btn" data-filter="Caixa 50" role="tab" aria-selected="false">Caixa 50</button>
+        <button class="pill-btn" data-filter="Caixa 51" role="tab" aria-selected="false">Caixa 51</button>
+      </div>
+    </div>
+
+    <!-- Contador de Resultados -->
+    <div class="catalog-meta-bar">
+      <span id="catalogCount" class="catalog-count-text">Carregando catálogo...</span>
+    </div>
+
+    <!-- Grade de Discos -->
+    <div class="catalog-grid" id="catalogGrid" aria-live="polite">
+      <!-- Injetado dinamicamente via app.js -->
+    </div>
+
+    <!-- Botão Carregar Mais -->
+    <div class="load-more-container" id="loadMoreContainer" style="display: none;">
+      <button class="btn btn-secondary" id="loadMoreBtn">Carregar mais vinis (+24)</button>
+    </div>
+  </section>
+
+  <!-- Seção 03: Contato e Localização -->
+  <section class="section-container" id="contato">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <span class="section-tag">Contato</span>
+      <span class="section-extra">Fale com a Casa</span>
+    </div>
+
+    <div class="contact-card-grid">
+      <div class="contact-box">
+        <h3 class="contact-box-title">Atendimento Direto</h3>
+        <p>Tire dúvidas sobre conservação, envie sua lista de desejos ou solicite fotos e vídeos do vinil tocando.</p>
+        <a href="#" id="directWhatsappBtn" class="btn btn-whatsapp-card" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2z"/>
+          </svg>
+          Conversar pelo WhatsApp
+        </a>
+      </div>
+
+      <div class="contact-box">
+        <h3 class="contact-box-title">São Paulo, Brasil</h3>
+        <p id="storeAddress">Atendimento presencial e envio diário via Correios / Transportadora com embalagem reforçada para todo o país.</p>
+        <p class="contact-email"><strong>E-mail:</strong> <span id="storeEmail">contato@freelancerdiscos.com.br</span></p>
+      </div>
+
+      <div class="contact-box">
+        <h3 class="contact-box-title">Siga a Freelancer</h3>
+        <p>Acompanhe garimpos em tempo real, novidades das caixas e lançamentos da semana no nosso perfil.</p>
+        <a href="https://instagram.com/freelancerdiscos" id="storeInstagram" class="contact-social-link" target="_blank" rel="noopener">
+          @freelancerdiscos no Instagram →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rodapé Institucional -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-col brand-col">
+        <img src="assets/logo.png" alt="Freelancer Discos" class="footer-logo" width="160" height="42">
+        <p class="footer-desc">Curadoria fonográfica apaixonada. Raridades, primeiras prensagens e discos novos de colecionador.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">CANAIS</h4>
+        <p>São Paulo, Brasil<br>
+        <span id="footerWhatsappText">WhatsApp: (11) 99999-9999</span><br>
+        <span id="footerEmailText">contato@freelancerdiscos.com.br</span><br>
+        <span id="footerInstagramText">@freelancerdiscos</span></p>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">NAVEGUE</h4>
+        <ul class="footer-nav">
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#sobre">Quem Somos</a></li>
+          <li><a href="#catalogo">Catálogo de Novidades</a></li>
+          <li><a href="#contato">Contato & Pedidos</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>Freelancer Discos · Todos os direitos reservados</span>
+      <span>Edição Nº 51 · Caixas 50 e 51</span>
+    </div>
+  </footer>
+
+  <!-- Drawer da Sacola de Compras (Modal Deslizante) -->
+  <div class="cart-overlay" id="cartOverlay" aria-hidden="true"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Sacola de Compras" aria-hidden="true">
+    <div class="drawer-header">
+      <div class="drawer-title-wrap">
+        <h3 class="drawer-title">Sua Sacola</h3>
+        <span class="drawer-subtitle" id="drawerItemCount">0 discos selecionados</span>
+      </div>
+      <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Fechar Sacola">&times;</button>
+    </div>
+
+    <!-- Lista de Itens -->
+    <div class="drawer-body" id="cartItemsList">
+      <!-- Itens da sacola ou estado vazio injetado via app.js -->
+    </div>
+
+    <!-- Rodapé da Sacola: Totais e WhatsApp -->
+    <div class="drawer-footer" id="drawerFooter" style="display: none;">
+      <div class="drawer-subtotal-row">
+        <span>Subtotal dos Vinis</span>
+        <strong class="drawer-subtotal-value" id="cartSubtotal">R$ 0,00</strong>
+      </div>
+
+      <!-- Dados Opcionais para Agilizar Frete -->
+      <div class="drawer-inputs">
+        <input type="text" id="customerName" class="drawer-input" placeholder="Seu Nome (opcional)">
+        <input type="text" id="customerCity" class="drawer-input" placeholder="Sua Cidade / Bairro (para cálculo de frete)">
+      </div>
+
+      <!-- Botão de Finalização no WhatsApp -->
+      <button class="btn btn-checkout-whatsapp" id="checkoutWhatsappBtn">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+          <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2z"/>
+        </svg>
+        <span>Fechar Pedido no WhatsApp</span>
+      </button>
+
+      <button class="cart-clear-link" id="clearCartBtn">Esvaziar sacola</button>
+    </div>
+  </aside>
+
+  <!-- Botão Flutuante de Sacola (Fixo no Mobile) -->
+  <button class="floating-cart-btn" id="floatingCartBtn" aria-label="Abrir Sacola de Compras">
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <path d="M16 10a4 4 0 0 1-8 0"></path>
+    </svg>
+    <span class="floating-cart-badge" id="floatingCartBadge">0</span>
+  </button>
+
+  <!-- Scripts -->
+  <script src="js/config.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

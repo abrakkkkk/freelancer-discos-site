@@ -1,0 +1,84 @@
+/**
+ * tokens.css - Design System de 3 camadas para a Freelancer Discos
+ * Primitivos -> Semânticos -> Componentes
+ */
+
+:root {
+  /* ==========================================================================
+     1. TOKENS PRIMITIVOS (Cores, Fontes e Medidas Brutas)
+     ========================================================================== */
+  --primitive-black: #050505;
+  --primitive-bg: #0a0a0a;
+  --primitive-card: #121212;
+  --primitive-card-hover: #181818;
+  --primitive-surface: #1e1e1e;
+  
+  --primitive-red: #c0392b;
+  --primitive-red-dark: #7b1a1a;
+  --primitive-red-glow: rgba(192, 57, 43, 0.45);
+  
+  --primitive-white: #ffffff;
+  --primitive-gray-100: #f5f5f5;
+  --primitive-gray-300: #d4d4d4;
+  --primitive-gray-400: #aaaaaa;
+  --primitive-gray-600: #666666;
+  --primitive-line: #2b2b2b;
+  --primitive-line-light: rgba(255, 255, 255, 0.12);
+
+  --primitive-green: #25d366;
+  --primitive-green-dark: #1f9d55;
+
+  /* Tipografia */
+  --primitive-font-serif: 'Playfair Display', Georgia, serif;
+  --primitive-font-head: 'Bebas Neue', Impact, 'Arial Narrow', sans-serif;
+  --primitive-font-body: 'Inter', system-ui, -apple-system, sans-serif;
+
+  /* ==========================================================================
+     2. TOKENS SEMÂNTICOS (Propósito e Contexto de Uso)
+     ========================================================================== */
+  --color-page-bg: var(--primitive-bg);
+  --color-page-card: var(--primitive-card);
+  --color-text-main: var(--primitive-white);
+  --color-text-muted: var(--primitive-gray-400);
+  --color-border: var(--primitive-line);
+  --color-border-subtle: var(--primitive-line-light);
+
+  --color-brand-primary: var(--primitive-red);
+  --color-brand-hover: var(--primitive-red-dark);
+  --color-brand-glow: var(--primitive-red-glow);
+  --color-accent-whatsapp: var(--primitive-green);
+
+  --font-editorial-title: var(--primitive-font-serif);
+  --font-editorial-eyebrow: var(--primitive-font-head);
+  --font-text-interface: var(--primitive-font-body);
+
+  /* Espaçamentos e Escalas */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* Raios de Borda */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-full: 9999px;
+
+  /* Mobile-first Touch Target e Safe Areas */
+  --touch-target-min: 44px;
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+
+  /* Transições suaves */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Sombras */
+  --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.6);
+  --shadow-drawer: -5px 0 35px rgba(0, 0, 0, 0.85);
+  --shadow-badge: 0 2px 8px rgba(192, 57, 43, 0.4);
+}
