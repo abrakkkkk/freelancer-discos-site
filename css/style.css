@@ -520,7 +520,7 @@ a {
 }
 
 /* ==========================================================================
-   8. SEÇÃO 01: QUEM SOMOS & ESTANTE GENERATIVA
+   8. SEÇÃO 01: QUEM SOMOS & CARROSSEL FOTOGRÁFICO DO ESPAÇO
    ========================================================================== */
 .about-grid {
   display: grid;
@@ -532,62 +532,221 @@ a {
   .about-grid {
     grid-template-columns: 5fr 6fr;
     gap: 64px;
+    align-items: start;
   }
 }
 
-.about-visual {
-  margin: 0;
+/* Container do Carrossel */
+.about-carousel-wrap {
+  position: relative;
+  width: 100%;
 }
 
-.shelf-wrapper {
+.about-carousel {
   position: relative;
-  aspect-ratio: 4/5;
-  overflow: hidden;
-  background: #181109;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  padding: 12px 0;
-  filter: sepia(0.7) contrast(1.08);
+  background: var(--primitive-card);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
+  overflow: hidden;
   box-shadow: var(--shadow-card);
 }
 
-.shelf-wrapper .row {
-  display: flex;
-  align-items: flex-end;
-  height: 29%;
-  gap: 2px;
-  padding: 0 10px;
-  border-bottom: 6px solid #3b2714;
-}
-
-.shelf-wrapper .row b {
-  display: block;
-  border-radius: 1px 1px 0 0;
-  transition: transform 0.2s ease;
-}
-
-.shelf-wrapper .row b:hover {
-  transform: translateY(-8px);
-}
-
-.shelf-wrapper::after {
-  content: "";
+/* Contador Numérico no Canto Superior */
+.carousel-counter-pill {
   position: absolute;
-  inset: 0;
-  background: radial-gradient(circle, transparent 40%, rgba(0, 0, 0, 0.7));
-  pointer-events: none;
+  top: 14px;
+  right: 14px;
+  z-index: 5;
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-main);
+  font-family: var(--font-editorial-eyebrow);
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
 }
 
-.shelf-caption {
-  margin-top: 12px;
-  font-size: 12px;
+#currentSlideNum {
+  color: var(--color-brand-primary);
+}
+
+/* Área de Visualização e Trilho */
+.carousel-viewport {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  touch-action: pan-y pinch-zoom;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.carousel-slide {
+  flex: 0 0 100%;
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Área da Foto / Placeholder */
+.slide-media-box {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+@media (min-width: 900px) {
+  .slide-media-box {
+    aspect-ratio: 5 / 4;
+  }
+}
+
+.slide-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-6);
+  width: calc(100% - 24px);
+  height: calc(100% - 24px);
+  margin: 12px;
+  border: 1px dashed rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-sm);
+  background: radial-gradient(circle at center, rgba(192, 57, 43, 0.06), transparent 70%);
+}
+
+.placeholder-graphic {
+  color: var(--color-brand-primary);
+  margin-bottom: var(--space-3);
+  opacity: 0.85;
+}
+
+.placeholder-tag {
+  font-family: var(--font-editorial-eyebrow);
+  font-size: 15px;
+  letter-spacing: 0.12em;
+  color: var(--color-text-main);
+  text-transform: uppercase;
+  margin-bottom: var(--space-2);
+}
+
+.placeholder-desc {
+  font-size: 13px;
   color: var(--color-text-muted);
-  font-style: italic;
-  font-family: var(--font-editorial-title);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.placeholder-desc code {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: #fff;
+  font-family: monospace;
+  font-size: 12px;
+}
+
+.slide-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Legenda Editorial do Slide */
+.slide-caption {
+  padding: 12px 16px;
+  background: rgba(14, 14, 14, 0.95);
   border-top: 1px solid var(--color-border);
-  padding-top: 8px;
+  font-size: 13px;
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.caption-fig {
+  font-family: var(--font-editorial-eyebrow);
+  font-size: 13px;
+  color: var(--color-brand-primary);
+  letter-spacing: 0.08em;
+  flex-shrink: 0;
+}
+
+.caption-text {
+  font-style: italic;
+  line-height: 1.4;
+}
+
+/* Controles de Navegação (Touch Target >= 44x44px) */
+.carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: #0d0d0d;
+  border-top: 1px solid var(--color-border);
+  gap: 12px;
+}
+
+.carousel-arrow {
+  min-width: var(--touch-target-min);
+  min-height: var(--touch-target-min);
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  background: var(--primitive-card);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-main);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.carousel-arrow:hover {
+  background: var(--color-brand-primary);
+  border-color: var(--color-brand-primary);
+  color: #fff;
+}
+
+.carousel-dots {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  flex: 1;
+}
+
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  min-width: 10px;
+  min-height: 10px;
+  padding: 0;
+  border-radius: var(--radius-full);
+  background: var(--primitive-gray-600);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.carousel-dot.is-active {
+  width: 24px;
+  background: var(--color-brand-primary);
 }
 
 .about-content p {

@@ -50,8 +50,14 @@ async function runTests() {
   const vinylVisible = await page.locator('#vinylDisc').isVisible();
   console.log(`  ✓ Vinil CSS visível: ${vinylVisible}`);
 
-  const shelfChildren = await page.locator('#shelf .row').count();
-  console.log(`  ✓ Estante generativa renderizada com ${shelfChildren} fileiras.`);
+  const carouselVisible = await page.locator('#aboutCarousel').isVisible();
+  const slideCount = await page.locator('.carousel-slide').count();
+  console.log(`  ✓ Carrossel de fotos visível: ${carouselVisible} com ${slideCount} slides prontos.`);
+
+  // Testa navegação do carrossel
+  await page.click('#carouselNextBtn');
+  const slideNumText = await page.locator('#currentSlideNum').textContent();
+  console.log(`  ✓ Próximo slide acionado, slide atual: ${slideNumText}`);
 
   // Screenshot Desktop Geral
   const desktopFullShot = path.join(SCREENSHOT_DIR, 'desktop_full.png');

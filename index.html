@@ -114,11 +114,112 @@
     </div>
 
     <div class="about-grid">
-      <!-- Estante Generativa Viva -->
-      <figure class="about-visual">
-        <div class="shelf-wrapper" id="shelf"></div>
-        <figcaption class="shelf-caption">Fig. 1 — O acervo, da parede ao chão. Ilustração generativa.</figcaption>
-      </figure>
+      <!-- Carrossel de Fotos do Espaço (Preparado para imagens futuras) -->
+      <div class="about-carousel-wrap">
+        <div class="about-carousel" id="aboutCarousel" aria-roledescription="carousel" aria-label="Fotos do Espaço da Loja">
+          
+          <!-- Badge Editorial Indicador -->
+          <div class="carousel-counter-pill" id="carouselCounter" aria-live="polite">
+            <span id="currentSlideNum">01</span> / 03
+          </div>
+
+          <!-- Trilho dos Slides -->
+          <div class="carousel-viewport">
+            <div class="carousel-track" id="carouselTrack">
+              
+              <!-- Slide 1: Entrada & Balcão -->
+              <article class="carousel-slide is-active" role="group" aria-roledescription="slide" aria-label="1 de 3: Entrada e Balcão">
+                <div class="slide-media-box">
+                  <div class="slide-placeholder">
+                    <div class="placeholder-graphic">
+                      <svg viewBox="0 0 24 24" width="44" height="44" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                        <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                        <polyline points="21 15 16 10 5 21"></polyline>
+                      </svg>
+                    </div>
+                    <span class="placeholder-tag">Foto 01 · Fachada & Balcão</span>
+                    <p class="placeholder-desc">Adicione sua imagem em <code>assets/sobre-1.jpg</code></p>
+                  </div>
+                  <!-- Foto futura: <img src="assets/sobre-1.jpg" alt="Fachada e balcão" class="slide-photo" loading="lazy"> -->
+                </div>
+                <div class="slide-caption">
+                  <span class="caption-fig">Fig. 01</span>
+                  <span class="caption-text">Espaço de recepção, garimpo e atendimento da loja.</span>
+                </div>
+              </article>
+
+              <!-- Slide 2: Estantes & Acervo -->
+              <article class="carousel-slide" role="group" aria-roledescription="slide" aria-label="2 de 3: Estantes e Acervo">
+                <div class="slide-media-box">
+                  <div class="slide-placeholder">
+                    <div class="placeholder-graphic">
+                      <svg viewBox="0 0 24 24" width="44" height="44" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                      </svg>
+                    </div>
+                    <span class="placeholder-tag">Foto 02 · Estantes & Caixas</span>
+                    <p class="placeholder-desc">Adicione sua imagem em <code>assets/sobre-2.jpg</code></p>
+                  </div>
+                  <!-- Foto futura: <img src="assets/sobre-2.jpg" alt="Estantes de vinil" class="slide-photo" loading="lazy"> -->
+                </div>
+                <div class="slide-caption">
+                  <span class="caption-fig">Fig. 02</span>
+                  <span class="caption-text">Acervo organizado por gênero com novidades semanais.</span>
+                </div>
+              </article>
+
+              <!-- Slide 3: Audição & Toca-Discos -->
+              <article class="carousel-slide" role="group" aria-roledescription="slide" aria-label="3 de 3: Ponto de Audição">
+                <div class="slide-media-box">
+                  <div class="slide-placeholder">
+                    <div class="placeholder-graphic">
+                      <svg viewBox="0 0 24 24" width="44" height="44" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <line x1="12" y1="2" x2="12" y2="4"></line>
+                        <line x1="12" y1="20" x2="12" y2="22"></line>
+                      </svg>
+                    </div>
+                    <span class="placeholder-tag">Foto 03 · Ponto de Audição</span>
+                    <p class="placeholder-desc">Adicione sua imagem em <code>assets/sobre-3.jpg</code></p>
+                  </div>
+                  <!-- Foto futura: <img src="assets/sobre-3.jpg" alt="Ponto de audição" class="slide-photo" loading="lazy"> -->
+                </div>
+                <div class="slide-caption">
+                  <span class="caption-fig">Fig. 03</span>
+                  <span class="caption-text">Ambiente de audição para testar os vinis na hora.</span>
+                </div>
+              </article>
+
+            </div>
+          </div>
+
+          <!-- Controles de Navegação (Mínimo 44x44px Touch Target) -->
+          <div class="carousel-controls">
+            <button class="carousel-arrow prev" id="carouselPrevBtn" aria-label="Foto anterior">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+
+            <!-- Indicadores em Pontos (Dots) -->
+            <div class="carousel-dots" id="carouselDots" role="tablist" aria-label="Navegar pelas fotos">
+              <button class="carousel-dot is-active" role="tab" aria-selected="true" aria-label="Ver Foto 1" data-index="0"></button>
+              <button class="carousel-dot" role="tab" aria-selected="false" aria-label="Ver Foto 2" data-index="1"></button>
+              <button class="carousel-dot" role="tab" aria-selected="false" aria-label="Ver Foto 3" data-index="2"></button>
+            </div>
+
+            <button class="carousel-arrow next" id="carouselNextBtn" aria-label="Próxima foto">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+          </div>
+
+        </div>
+      </div>
 
       <!-- Conteúdo Editorial -->
       <div class="about-content">

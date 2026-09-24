@@ -571,15 +571,89 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ==========================================================================
-  // 11. INICIALIZAÇÃO
+  // 11. CARROSSEL DE FOTOS DO ESPAÇO (QUEM SOMOS)
   // ==========================================================================
-  initGenerativeShelf();
+  function initAboutCarousel() {
+    const track = document.getElementById('carouselTrack');
+    const slides = document.querySelectorAll('.carousel-slide');
+    const prevBtn = document.getElementById('carouselPrevBtn');
+    const nextBtn = document.getElementById('carouselNextBtn');
+    const dots = document.querySelectorAll('.carousel-dot');
+    const counterNum = document.getElementById('currentSlideNum');
+    
+    if (!track || slides.length === 0) return;
+
+    let currentIndex = 0;
+    const totalSlides = slides.length;
+
+    function goToSlide(index) {
+      if (index < 0) {
+        currentIndex = totalSlides - 1;
+      } else if (index >= totalSlides) {
+        currentIndex = 0;
+      } else {
+        currentIndex = index;
+      }
+
+      // Desloca o trilho com animação CSS suave
+      track.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+      // Atualiza classes ativas nos slides
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('is-active', i === currentIndex);
+        slide.setAttribute('aria-hidden', i !== currentIndex ? 'true' : 'false');
+      });
+
+      // Atualiza dots indicadores
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('is-active', i === currentIndex);
+        dot.setAttribute('aria-selected', i === currentIndex ? 'true' : 'false');
+      });
+
+      // Atualiza badge numérico editorial (ex: 01, 02, 03)
+      if (counterNum) {
+        counterNum.textContent = String(currentIndex + 1).padStart(2, '0');
+      }
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
+    }
+
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => goToSlide(i));
+    });
+
+    // Suporte a Touch Swipe no Mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    track.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    track.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      const swipeDistance = touchStartX - touchEndX;
+      if (swipeDistance > 40) {
+        goToSlide(currentIndex + 1);
+      } else if (swipeDistance < -40) {
+        goToSlide(currentIndex - 1);
+      }
+    }, { passive: true });
+
+    goToSlide(0);
+  }
+
+  // ==========================================================================
+  // 12. INICIALIZAÇÃO
+  // ==========================================================================
+  initAboutCarousel();
   loadCatalog();
   updateCartBadges();
   renderCartDrawer();
-
-  // Re-desenha estante caso a janela seja redimensionada
-  window.addEventListener('resize', () => {
-    initGenerativeShelf();
-  });
 });
