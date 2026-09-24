@@ -194,7 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
       catalogGrid.innerHTML = `
         <div style="grid-column: 1 / -1; text-align: center; padding: 56px var(--space-4); color: var(--color-text-muted);">
           <p style="font-size: 20px; font-family: var(--font-editorial-title); font-style: italic; margin-bottom: 8px;">Nenhum disco encontrado para esta busca.</p>
-          <p style="font-size: 14px;">Tente pesquisar outro artista, nome de álbum ou limpar o filtro de caixas.</p>
+          <p style="font-size: 14px;">Tente pesquisar outro artista ou nome do álbum.</p>
         </div>
       `;
       catalogCount.textContent = '0 discos encontrados';
@@ -205,8 +205,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const toRender = filteredRecords.slice(0, displayedCount);
 
     toRender.forEach(record => {
-      const isBox50 = record.caixa.includes('50');
-      const badgeClass = isBox50 ? 'box-50' : 'box-51';
       const inCart = cart.some(item => item.id === record.id);
       const fallbackColor = generateAlbumColor(record.artista + record.titulo);
 
@@ -238,7 +236,7 @@ document.addEventListener('DOMContentLoaded', () => {
       card.innerHTML = `
         <div class="record-top-meta">
           <span class="record-num">${String(record.numero).padStart(2, '0')}</span>
-          <span class="record-badge ${badgeClass}">${record.caixa}</span>
+          <span class="record-badge">Vinil LP</span>
         </div>
 
         <div class="record-artwork">
@@ -288,11 +286,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const termClean = normalizeText(searchTerm);
 
     filteredRecords = allRecords.filter(record => {
-      // Filtro de Caixa
-      const matchesBox = activeFilter === 'all' || record.caixa === activeFilter;
-      if (!matchesBox) return false;
-
-      // Filtro de Busca
       if (!termClean) return true;
       const artistClean = normalizeText(record.artista);
       const titleClean = normalizeText(record.titulo);

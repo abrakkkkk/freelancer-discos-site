@@ -79,20 +79,9 @@ async function runTests() {
   await page.click('#searchClear');
   await page.waitForTimeout(200);
 
-  // Teste de Filtros por Caixa
-  console.log('  📦 Testando filtros por Caixa...');
-  await page.click('[data-filter="Caixa 50"]');
-  await page.waitForTimeout(200);
-  const countBox50 = await page.locator('#catalogCount').textContent();
-  console.log(`  ✓ Filtro Caixa 50: ${countBox50}`);
-
-  await page.click('[data-filter="Caixa 51"]');
-  await page.waitForTimeout(200);
-  const countBox51 = await page.locator('#catalogCount').textContent();
-  console.log(`  ✓ Filtro Caixa 51: ${countBox51}`);
-
-  await page.click('[data-filter="all"]');
-  await page.waitForTimeout(200);
+  // Teste de catálogo total
+  const countTotal = await page.locator('#catalogCount').textContent();
+  console.log(`  ✓ Catálogo completo carregado: ${countTotal}`);
 
   // Teste da Sacola de Compras
   console.log('  🛒 Testando fluxo da Sacola de Compras...');
