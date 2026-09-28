@@ -64,7 +64,8 @@ a {
   justify-content: space-between;
   align-items: center;
   font-size: 11px;
-  letter-spacing: 0.16em;
+  font-weight: 300;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--color-text-muted);
 }
@@ -122,19 +123,22 @@ a {
 }
 
 .nav-link {
-  font-family: var(--primitive-font-serif);
-  font-style: italic;
-  font-size: 19px;
-  letter-spacing: 0.02em;
-  color: var(--primitive-gray-300);
-  padding-bottom: 2px;
-  border-bottom: 1px solid transparent;
+  font-family: var(--font-text-interface);
+  font-style: normal;
+  font-size: 14.5px;
+  font-weight: 400;
+  letter-spacing: 0.025em;
+  color: var(--primitive-white);
+  padding: 6px 2px;
+  border-bottom: 2px solid transparent;
   transition: all var(--transition-fast);
+  opacity: 0.95;
 }
 
 .nav-link:hover, .nav-link.active {
   color: var(--color-brand-primary);
   border-color: var(--color-brand-primary);
+  opacity: 1;
 }
 
 .nav-brand {
@@ -169,6 +173,13 @@ a {
   cursor: pointer;
   min-height: var(--touch-target-min);
   transition: all var(--transition-fast);
+}
+
+.cart-label {
+  font-family: var(--font-text-interface);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
 }
 
 .cart-trigger-btn:hover {
@@ -242,16 +253,22 @@ a {
 }
 
 .mobile-link {
-  font-family: var(--primitive-font-serif);
-  font-style: italic;
-  font-size: 20px;
-  color: var(--color-text-main);
-  padding: 12px 8px;
+  font-family: var(--font-text-interface);
+  font-style: normal;
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--primitive-white);
+  padding: 14px 10px;
   border-bottom: 1px solid var(--primitive-surface);
+  transition: color var(--transition-fast);
 }
 
 .mobile-link:last-child {
   border-bottom: none;
+}
+
+.mobile-link:hover, .mobile-link.active {
+  color: var(--color-brand-primary);
 }
 
 /* ==========================================================================
