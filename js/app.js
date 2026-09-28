@@ -274,6 +274,7 @@ const CatalogView = {
               alt="${record.titulo} - ${record.artista}" 
               class="record-cover-img" 
               loading="lazy" 
+              referrerpolicy="no-referrer"
               onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
          <div class="record-fallback-art" style="display: none; --album-color: ${fallbackColor};">
            <i></i>
@@ -430,7 +431,7 @@ const CartView = {
     itemEl.className = 'cart-item-card';
 
     const thumbHtml = item.capa_url
-      ? `<img src="${item.capa_url}" alt="${item.titulo}" class="cart-item-thumb">`
+      ? `<img src="${item.capa_url}" alt="${item.titulo}" class="cart-item-thumb" referrerpolicy="no-referrer">`
       : `<div class="cart-item-thumb" style="background: ${Formatters.generateAlbumColor(item.artista)}; display: grid; place-items: center; color: #fff; font-size: 11px; font-weight: 700;">VINIL</div>`;
 
     itemEl.innerHTML = `
