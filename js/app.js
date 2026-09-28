@@ -287,8 +287,8 @@ const CatalogView = {
     card.setAttribute('data-id', record.id);
     card.innerHTML = `
       <div class="record-top-meta">
-        <span class="record-num">${String(record.numero).padStart(2, '0')}</span>
-        <span class="record-badge">Vinil LP</span>
+        <span class="record-num">#${String(record.numero).padStart(2, '0')}</span>
+        ${record.caixa ? `<span class="record-badge">${record.caixa}</span>` : ''}
       </div>
       <div class="record-artwork">
         ${coverHtml}
