@@ -29,7 +29,7 @@
   --primitive-green-dark: #1f9d55;
 
   /* Tipografia */
-  --primitive-font-serif: 'Playfair Display', Georgia, serif;
+  --primitive-font-serif: 'Times New Roman', Times, 'Nimbus Roman No9 L', serif;
   --primitive-font-head: 'Bebas Neue', Impact, 'Arial Narrow', sans-serif;
   --primitive-font-body: 'Inter', system-ui, -apple-system, sans-serif;
 

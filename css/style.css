@@ -122,9 +122,10 @@ a {
 }
 
 .nav-link {
-  font-family: var(--font-editorial-title);
+  font-family: var(--primitive-font-serif);
   font-style: italic;
-  font-size: 17px;
+  font-size: 19px;
+  letter-spacing: 0.02em;
   color: var(--primitive-gray-300);
   padding-bottom: 2px;
   border-bottom: 1px solid transparent;
@@ -241,9 +242,9 @@ a {
 }
 
 .mobile-link {
-  font-family: var(--font-editorial-title);
+  font-family: var(--primitive-font-serif);
   font-style: italic;
-  font-size: 18px;
+  font-size: 20px;
   color: var(--color-text-main);
   padding: 12px 8px;
   border-bottom: 1px solid var(--primitive-surface);
@@ -320,13 +321,13 @@ a {
 .hero-lede {
   font-family: var(--font-editorial-title);
   font-style: italic;
-  font-size: clamp(18px, 2.2vw, 24px);
-  color: var(--color-text-muted);
-  max-width: 480px;
+  font-size: clamp(19px, 2.3vw, 24px);
+  color: var(--primitive-gray-300);
+  max-width: 500px;
   margin-bottom: var(--space-8);
   padding-left: var(--space-4);
   border-left: 2px solid var(--color-brand-primary);
-  line-height: 1.45;
+  line-height: 1.55;
 }
 
 .hero-actions {
