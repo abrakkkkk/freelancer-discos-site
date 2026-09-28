@@ -312,17 +312,19 @@ const CatalogView = {
   },
 
   renderEmptyState() {
+    if (!this.grid) return;
     this.grid.innerHTML = `
       <div style="grid-column: 1 / -1; text-align: center; padding: 56px var(--space-4); color: var(--color-text-muted);">
         <p style="font-size: 20px; font-family: var(--font-editorial-title); font-style: italic; margin-bottom: 8px;">Nenhum disco encontrado para esta busca.</p>
         <p style="font-size: 14px;">Tente pesquisar outro artista ou nome do álbum.</p>
       </div>
     `;
-    this.counter.textContent = '0 discos encontrados';
-    this.loadMoreContainer.style.display = 'none';
+    if (this.counter) this.counter.textContent = '0 discos encontrados';
+    if (this.loadMoreContainer) this.loadMoreContainer.style.display = 'none';
   },
 
   renderRecords(records, cartManager, displayedCount) {
+    if (!this.grid) return;
     this.grid.innerHTML = '';
 
     if (records.length === 0) {
@@ -609,15 +611,17 @@ document.addEventListener('DOMContentLoaded', async () => {
     CatalogView.renderRecords(filteredRecords, cartManager, displayedCount);
   };
 
-  // Carregamento de dados
-  CatalogView.renderLoading();
-  try {
-    allRecords = await CatalogService.loadAllRecords();
-    filteredRecords = [...allRecords];
-    CatalogView.renderRecords(filteredRecords, cartManager, displayedCount);
-  } catch (err) {
-    console.error('Erro ao carregar catálogo:', err);
-    CatalogView.renderError();
+  // Carregamento de dados (se a página tiver grade de catálogo)
+  if (CatalogView.grid) {
+    CatalogView.renderLoading();
+    try {
+      allRecords = await CatalogService.loadAllRecords();
+      filteredRecords = [...allRecords];
+      CatalogView.renderRecords(filteredRecords, cartManager, displayedCount);
+    } catch (err) {
+      console.error('Erro ao carregar catálogo:', err);
+      CatalogView.renderError();
+    }
   }
 
   // Sincroniza visual inicial da sacola

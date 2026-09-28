@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Quem Somos & Notícias — Freelancer Discos | História, Espaço e Atualidades</title>
+  <meta name="description" content="Conheça a história da Freelancer Discos, nosso espaço físico de audição no Centro de Fortaleza, notícias e eventos do universo do vinil.">
+  
+  <!-- Favicon / Meta Tema -->
+  <meta name="theme-color" content="#0a0a0a">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <!-- Fontes Editoriais Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+  <!-- Design Tokens e Estilos -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Topbar Editorial Metadados -->
+  <header class="topbar">
+    <div class="meta-container">
+      <span class="meta-item meta-edition">Acervo em Vinil</span>
+      <span class="meta-item meta-tagline">História · Notícias · Espaço Físico</span>
+      <span class="meta-item meta-location">Fortaleza, CE</span>
+    </div>
+  </header>
+
+  <!-- Navegação Principal -->
+  <nav class="main-nav" id="mainNav">
+    <div class="nav-container">
+      <!-- Menu Esquerdo (Desktop) -->
+      <ul class="nav-links nav-left">
+        <li><a href="index.html#inicio" class="nav-link">Início</a></li>
+        <li><a href="sobre.html" class="nav-link active">Quem Somos</a></li>
+      </ul>
+
+      <!-- Logotipo Central -->
+      <a href="index.html#inicio" class="nav-brand" aria-label="Freelancer Discos - Início">
+        <img src="assets/logo.png" alt="Freelancer Discos" class="brand-logo" width="180" height="48">
+      </a>
+
+      <!-- Menu Direito & Botão da Sacola -->
+      <div class="nav-right-wrap">
+        <ul class="nav-links nav-right">
+          <li><a href="index.html#catalogo" class="nav-link">Catálogo</a></li>
+          <li><a href="#contato" class="nav-link">Contato</a></li>
+        </ul>
+
+        <!-- Botão Sacola de Compras -->
+        <button class="cart-trigger-btn" id="cartTrigger" aria-label="Abrir Sacola de Compras">
+          <svg class="cart-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="cart-label">Sacola</span>
+          <span class="cart-badge" id="cartBadge">0</span>
+        </button>
+
+        <!-- Menu Hamburguer Mobile -->
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu de navegação">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Gaveta de Links Mobile -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html#inicio" class="mobile-link">Início</a>
+      <a href="sobre.html" class="mobile-link active">Quem Somos</a>
+      <a href="index.html#catalogo" class="mobile-link">Catálogo (Novidades)</a>
+      <a href="#contato" class="mobile-link">Contato & Localização</a>
+    </div>
+  </nav>
+
+  <!-- Hero Editorial Dedicado -->
+  <section class="about-hero-section">
+    <div class="about-hero-inner">
+      <span class="about-hero-kicker">HISTÓRIA & MANIFESTO · FREELANCER DISCOS</span>
+      <h1 class="about-hero-title">Nossa História,<br><em>O Vinil</em> & Notícias</h1>
+      <p class="about-hero-lede">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+      </p>
+      <div class="about-hero-actions">
+        <a href="#historia" class="btn btn-primary">Conhecer a Trajetória ↓</a>
+        <a href="#noticias" class="btn btn-outline">Ver Notícias e Eventos →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção 01: A História & Trajetória (Modelada em Lorem Ipsum) -->
+  <section class="section-container" id="historia">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <span class="section-tag">Trajetória</span>
+      <span class="section-extra">Origem & Paixão Analógica</span>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-content" style="grid-column: 1 / -1; max-width: 920px; margin: 0 auto;">
+        <h2 class="editorial-heading">A Origem do <em>Garimpo</em></h2>
+        <p class="about-lead">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.
+        </p>
+
+        <blockquote class="about-quote">
+          “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pretium tincidunt lacus. Nulla gravida orci a odio, et feugiat enim ipsum eu libero.”
+        </blockquote>
+
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        </p>
+
+        <p>
+          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris. Integer in mauris eu nibh euismod gravida duis ac tellus et risus vulputate vehicula.
+        </p>
+
+        <!-- Timeline Cronológica Editorial -->
+        <div class="timeline-grid">
+          <div class="timeline-card">
+            <span class="timeline-year">2018</span>
+            <h3 class="timeline-heading">O Primeiro Garimpo</h3>
+            <p class="timeline-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
+          </div>
+
+          <div class="timeline-card">
+            <span class="timeline-year">2021</span>
+            <h3 class="timeline-heading">Espaço no Centro</h3>
+            <p class="timeline-text">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+          </div>
+
+          <div class="timeline-card">
+            <span class="timeline-year">2024</span>
+            <h3 class="timeline-heading">Caixas 50 e 51</h3>
+            <p class="timeline-text">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est.</p>
+          </div>
+
+          <div class="timeline-card">
+            <span class="timeline-year">2026</span>
+            <h3 class="timeline-heading">Acervo Vivo & Conexão</h3>
+            <p class="timeline-text">Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção 02: O Espaço Físico & Audição -->
+  <section class="section-container" id="espaco">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <span class="section-tag">O Espaço</span>
+      <span class="section-extra">Centro de Fortaleza</span>
+    </div>
+
+    <div class="catalog-intro">
+      <h2 class="editorial-heading">Um Ponto de Encontro Fonográfico</h2>
+      <p style="color: var(--color-text-muted); max-width: 680px; margin-top: 8px;">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pretium tincidunt lacus. Nulla gravida orci a odio, et feugiat enim ipsum eu libero.
+      </p>
+    </div>
+
+    <div class="space-gallery-grid">
+      <!-- Card Espaço 1 -->
+      <article class="space-card">
+        <div class="space-card-media">
+          <div class="slide-placeholder" style="padding: 24px;">
+            <div class="placeholder-graphic">
+              <svg viewBox="0 0 24 24" width="44" height="44" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                <polyline points="21 15 16 10 5 21"></polyline>
+              </svg>
+            </div>
+            <span class="placeholder-tag">Foto 01 · Fachada & Balcão</span>
+            <p class="placeholder-desc">Imagem em <code>assets/sobre-1.jpg</code></p>
+          </div>
+        </div>
+        <div class="space-card-body">
+          <span class="space-card-tag">AMBIENTE 01</span>
+          <h3 class="space-card-title">Recepção & Atendimento</h3>
+          <p class="space-card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore.</p>
+        </div>
+      </article>
+
+      <!-- Card Espaço 2 -->
+      <article class="space-card">
+        <div class="space-card-media">
+          <div class="slide-placeholder" style="padding: 24px;">
+            <div class="placeholder-graphic">
+              <svg viewBox="0 0 24 24" width="44" height="44" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+              </svg>
+            </div>
+            <span class="placeholder-tag">Foto 02 · Estantes & Caixas</span>
+            <p class="placeholder-desc">Imagem em <code>assets/sobre-2.jpg</code></p>
+          </div>
+        </div>
+        <div class="space-card-body">
+          <span class="space-card-tag">AMBIENTE 02</span>
+          <h3 class="space-card-title">Estantes de Garimpo</h3>
+          <p class="space-card-desc">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+        </div>
+      </article>
+
+      <!-- Card Espaço 3 -->
+      <article class="space-card">
+        <div class="space-card-media">
+          <div class="slide-placeholder" style="padding: 24px;">
+            <div class="placeholder-graphic">
+              <svg viewBox="0 0 24 24" width="44" height="44" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="12" cy="12" r="10"></circle>
+                <circle cx="12" cy="12" r="3"></circle>
+                <line x1="12" y1="2" x2="12" y2="4"></line>
+                <line x1="12" y1="20" x2="12" y2="22"></line>
+              </svg>
+            </div>
+            <span class="placeholder-tag">Foto 03 · Ponto de Audição</span>
+            <p class="placeholder-desc">Imagem em <code>assets/sobre-3.jpg</code></p>
+          </div>
+        </div>
+        <div class="space-card-body">
+          <span class="space-card-tag">AMBIENTE 03</span>
+          <h3 class="space-card-title">Espaço de Audição</h3>
+          <p class="space-card-desc">Curabitur pretium tincidunt lacus. Nulla gravida orci a odio, et feugiat enim ipsum eu libero.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Seção 03: Mural de Notícias & Eventos -->
+  <section class="section-container" id="noticias">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <span class="section-tag">Notícias & Eventos</span>
+      <span class="section-extra">Mural da Casa</span>
+    </div>
+
+    <div class="catalog-intro">
+      <h2 class="editorial-heading">Atualidades & Garimpos</h2>
+      <p style="color: var(--color-text-muted); max-width: 680px; margin-top: 8px;">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      </p>
+    </div>
+
+    <div class="news-grid">
+      <!-- Artigo Notícia 1 -->
+      <article class="news-card">
+        <div class="news-meta-row">
+          <span class="news-badge">GARIMPO DA SEMANA</span>
+          <time class="news-date">Março 2026</time>
+        </div>
+        <h3 class="news-title">Lorem Ipsum Dolor Sit Amet Consectetur</h3>
+        <p class="news-excerpt">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi nulla quis sem.
+        </p>
+        <a href="#contato" class="news-link">Consultar Lote no WhatsApp →</a>
+      </article>
+
+      <!-- Artigo Notícia 2 -->
+      <article class="news-card">
+        <div class="news-meta-row">
+          <span class="news-badge">EVENTO & FEIRA</span>
+          <time class="news-date">Abril 2026</time>
+        </div>
+        <h3 class="news-title">Duis Aute Irure Dolor in Reprehenderit</h3>
+        <p class="news-excerpt">
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+        </p>
+        <a href="#contato" class="news-link">Saber Mais Detalhes →</a>
+      </article>
+
+      <!-- Artigo Notícia 3 -->
+      <article class="news-card">
+        <div class="news-meta-row">
+          <span class="news-badge">CULTURA DO VINIL</span>
+          <time class="news-date">Maio 2026</time>
+        </div>
+        <h3 class="news-title">Nullam Varius Turpis et Commodo Pharetra</h3>
+        <p class="news-excerpt">
+          Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris. Integer in mauris eu nibh euismod.
+        </p>
+        <a href="#contato" class="news-link">Dicas de Conservação →</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- Seção 04: Contato & Visitação -->
+  <section class="section-container" id="contato">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <span class="section-tag">Visite a Casa</span>
+      <span class="section-extra">Fortaleza, CE</span>
+    </div>
+
+    <div class="contact-card-grid">
+      <div class="contact-box">
+        <h3 class="contact-box-title">Atendimento Direto</h3>
+        <p>Dúvidas sobre o acervo, agendamento de audição presencial ou pedidos com envio para todo o Brasil.</p>
+        <a href="#" id="directWhatsappBtn" class="btn btn-whatsapp-card" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2z"/>
+          </svg>
+          Conversar pelo WhatsApp
+        </a>
+      </div>
+
+      <div class="contact-box">
+        <h3 class="contact-box-title">Endereço & Localização</h3>
+        <p id="storeAddress">Rua Dr. João Moreira, 485 — Centro, Fortaleza - CE.</p>
+        <div class="visit-hours-box">
+          <div class="visit-hours-row">
+            <span class="visit-hours-day">Segunda a Sexta</span>
+            <span class="visit-hours-time">09:00 — 18:00</span>
+          </div>
+          <div class="visit-hours-row">
+            <span class="visit-hours-day">Sábado</span>
+            <span class="visit-hours-time">09:00 — 14:00</span>
+          </div>
+          <div class="visit-hours-row">
+            <span class="visit-hours-day">Domingo</span>
+            <span class="visit-hours-time">Fechado</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-box">
+        <h3 class="contact-box-title">Redes & Comunidade</h3>
+        <p>Acompanhe garimpos ao vivo, fotos das novidades que chegam às caixas e histórias de colecionadores.</p>
+        <a href="https://instagram.com/freelancerdiscos" id="storeInstagram" class="contact-social-link" target="_blank" rel="noopener">
+          @freelancerdiscos no Instagram →
+        </a>
+        <p class="contact-email" style="margin-top: 16px;"><strong>E-mail:</strong> <span id="storeEmail">contato@freelancerdiscos.com.br</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rodapé Institucional -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-col brand-col">
+        <img src="assets/logo.png" alt="Freelancer Discos" class="footer-logo" width="160" height="42">
+        <p class="footer-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">CANAIS</h4>
+        <p>Rua Dr. João Moreira, 485 — Centro<br>
+        Fortaleza, CE<br>
+        <span id="footerWhatsappText">WhatsApp: (85) 99999-9999</span><br>
+        <span id="footerEmailText">contato@freelancerdiscos.com.br</span><br>
+        <span id="footerInstagramText">@freelancerdiscos</span></p>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">NAVEGUE</h4>
+        <ul class="footer-nav">
+          <li><a href="index.html#inicio">Início</a></li>
+          <li><a href="sobre.html">Quem Somos</a></li>
+          <li><a href="index.html#catalogo">Catálogo de Novidades</a></li>
+          <li><a href="#contato">Contato & Pedidos</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>Freelancer Discos · Todos os direitos reservados</span>
+      <span>Novidades & Raridades em Vinil</span>
+    </div>
+  </footer>
+
+  <!-- Drawer da Sacola de Compras -->
+  <div class="cart-overlay" id="cartOverlay" aria-hidden="true"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Sacola de Compras" aria-hidden="true">
+    <div class="drawer-header">
+      <div class="drawer-title-wrap">
+        <h3 class="drawer-title">Sua Sacola</h3>
+        <span class="drawer-subtitle" id="drawerItemCount">0 discos selecionados</span>
+      </div>
+      <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Fechar Sacola">&times;</button>
+    </div>
+
+    <!-- Lista de Itens -->
+    <div class="drawer-body" id="cartItemsList">
+      <!-- Injetado dinamicamente via app.js -->
+    </div>
+
+    <!-- Rodapé da Sacola -->
+    <div class="drawer-footer" id="drawerFooter" style="display: none;">
+      <div class="drawer-subtotal-row">
+        <span>Subtotal dos Vinis</span>
+        <strong class="drawer-subtotal-value" id="cartSubtotal">R$ 0,00</strong>
+      </div>
+
+      <div class="drawer-inputs">
+        <input type="text" id="customerName" class="drawer-input" placeholder="Seu Nome (opcional)">
+        <input type="text" id="customerCity" class="drawer-input" placeholder="Sua Cidade / Bairro (para cálculo de frete)">
+      </div>
+
+      <button class="btn btn-checkout-whatsapp" id="checkoutWhatsappBtn">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+          <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2z"/>
+        </svg>
+        <span>Fechar Pedido no WhatsApp</span>
+      </button>
+
+      <button class="cart-clear-link" id="clearCartBtn">Esvaziar sacola</button>
+    </div>
+  </aside>
+
+  <!-- Botão Flutuante de Sacola (Fixo no Mobile) -->
+  <button class="floating-cart-btn" id="floatingCartBtn" aria-label="Abrir Sacola de Compras">
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <path d="M16 10a4 4 0 0 1-8 0"></path>
+    </svg>
+    <span class="floating-cart-badge" id="floatingCartBadge">0</span>
+  </button>
+
+  <!-- Scripts -->
+  <script src="js/config.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
