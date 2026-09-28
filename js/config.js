@@ -14,9 +14,9 @@ window.STORE_CONFIG = {
 
   
   // WhatsApp oficial da loja
-  whatsappNumber: "5585999999999", 
-  whatsappFormatted: "(85) WhatsApp",
-  whatsappDirectUrl: "https://api.whatsapp.com/message/MDNETMFAPBNME1?autoload=1&app_absent=0",
+  whatsappNumber: "5585987879214", 
+  whatsappFormatted: "(85) 98787-9214",
+  whatsappDirectUrl: "https://wa.me/5585987879214",
   
   instagram: "@freelancer_discosalex",
   instagramUrl: "https://www.instagram.com/freelancer_discosalex/",

@@ -224,7 +224,7 @@ const OrderService = {
 
   buildCheckoutUrl(cartManager, customerName, customerCity) {
     const cfg = window.STORE_CONFIG || {};
-    const rawNumber = cfg.whatsappNumber || '5585999999999';
+    const rawNumber = cfg.whatsappNumber || '5585987879214';
     const cleanNumber = rawNumber.replace(/\D/g, '');
     const greeting = cfg.orderGreeting || 'Olá, Freelancer Discos! Gostaria de comprar os seguintes vinis:';
 
