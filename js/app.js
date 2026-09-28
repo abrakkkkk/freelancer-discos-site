@@ -555,13 +555,21 @@ const StoreConfigComponent = {
     this.setText('footerEmailText', cfg.email);
     this.setText('storeInstagram', cfg.instagram ? `${cfg.instagram} no Instagram →` : null);
     this.setText('footerInstagramText', cfg.instagram);
+    const storeIgLink = document.getElementById('storeInstagram');
+    if (storeIgLink && cfg.instagramUrl) {
+      storeIgLink.href = cfg.instagramUrl;
+    }
     this.setText('storeAddress', cfg.address);
 
     const directBtn = document.getElementById('directWhatsappBtn');
-    if (directBtn && cfg.whatsappNumber) {
-      const phone = cfg.whatsappNumber.replace(/\D/g, '');
-      const msg = encodeURIComponent('Olá, Freelancer Discos! Estava navegando no site e gostaria de falar com a equipe de curadoria.');
-      directBtn.href = `https://wa.me/${phone}?text=${msg}`;
+    if (directBtn) {
+      if (cfg.whatsappDirectUrl) {
+        directBtn.href = cfg.whatsappDirectUrl;
+      } else if (cfg.whatsappNumber) {
+        const phone = cfg.whatsappNumber.replace(/\D/g, '');
+        const msg = encodeURIComponent('Olá, Freelancer Discos! Estava navegando no site e gostaria de falar com a equipe de curadoria.');
+        directBtn.href = `https://wa.me/${phone}?text=${msg}`;
+      }
     }
   },
 

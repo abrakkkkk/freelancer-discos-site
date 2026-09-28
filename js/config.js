@@ -13,12 +13,13 @@ window.STORE_CONFIG = {
   supabaseAnonKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpvbHN1d3V5c2V4dm5qb21ldnZ2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODYzODY5MjUsImV4cCI6MjEwMTk2MjkyNX0.zhX-Cuynn9coyPwq3Qh-SfnGNQWUalvBRRlqx-bBC3E",
 
   
-  // WhatsApp oficial da loja (código do país 55 + DDD + número sem espaços nem traços)
+  // WhatsApp oficial da loja
   whatsappNumber: "5585999999999", 
-  whatsappFormatted: "(85) 99999-9999",
+  whatsappFormatted: "(85) WhatsApp",
+  whatsappDirectUrl: "https://api.whatsapp.com/message/MDNETMFAPBNME1?autoload=1&app_absent=0",
   
-  instagram: "@freelancerdiscos",
-  instagramUrl: "https://instagram.com/freelancerdiscos",
+  instagram: "@freelancer_discosalex",
+  instagramUrl: "https://www.instagram.com/freelancer_discosalex/",
   email: "contato@freelancerdiscos.com.br",
   address: "Rua Dr. João Moreira, 485 — Centro, Fortaleza - CE. Atendimento presencial e envio diário para todo o Brasil com embalagem reforçada.",
   
